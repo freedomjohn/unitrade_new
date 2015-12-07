@@ -153,7 +153,6 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
             }
             currentImage.image = nil
             self.checkPhoto = false
-            self.didPost = true
         }
         self.view.endEditing(true)
     }
