@@ -166,7 +166,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
             post["name"] = itemName.text
             post["price"] = Price.text
             post["description"] = itemDescription.text
-            post["category"] = "none"
+            post["category"] = selectCategory.text
             post["user"] = PFUser.currentUser()?.objectId
             itemName.text = nil
             Price.text = nil

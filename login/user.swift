@@ -13,6 +13,8 @@ import ParseUI
 class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
     @IBOutlet weak var userID: UILabel!
+    @IBOutlet weak var numPosts: UILabel!
+    
     @IBOutlet weak var myCollectionView: UICollectionView!
     @IBAction func LogoutBtn(sender: AnyObject) {
         // Log out and show the main page
@@ -29,6 +31,17 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         userID.text = PFUser.currentUser()?.username
+        
+        var numPost = 0
+        do {
+            let query = PFQuery(className: "Post")
+            query.whereKey("user", equalTo: (PFUser.currentUser()?.objectId)!)
+            numPost = try query.findObjects().count
+        } catch {
+            print("error3")
+        }
+        numPosts.text = String(numPost)
+
     }
     
     override func didReceiveMemoryWarning() {
