@@ -9,10 +9,12 @@
 import UIKit
 import Parse
 
+
 class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate  {
     
     var i = 0;
     var checkPhoto = false
+    var didPost = false
     
     // var post = PFObject(className: "Post")
     
@@ -152,6 +154,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
             }
             currentImage.image = nil
             self.checkPhoto = false
+            self.didPost = true
         }
         self.view.endEditing(true)
     }
@@ -193,4 +196,11 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         return image
     }
     
+    func getDidPost() -> Bool{
+        return didPost
+    }
+    
+    func setDidPost(){
+        didPost = false
+    }
 }

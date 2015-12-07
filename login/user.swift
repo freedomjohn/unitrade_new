@@ -10,17 +10,23 @@ import UIKit
 import Parse
 import ParseUI
 
-class user: UIViewController{
+class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
+    @IBOutlet weak var myCollectionView: UICollectionView!
     @IBAction func LogoutBtn(sender: AnyObject) {
         // Log out and show the main page
         PFUser.logOut()
         tabBarController?.selectedIndex = 0 // open the first tab bar
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        myCollectionView.reloadData()
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,15 +34,43 @@ class user: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        var retVal = 0
+        do {
+            let query = PFQuery(className: "Post")
+            query.whereKey("user", equalTo: (PFUser.currentUser()?.objectId)!)
+            retVal = try query.findObjects().count
+        } catch {
+            print("error2")
+        }
+        return retVal // number of posts
     }
-    */
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        var postArray = [PFObject]()
+        let cell: colvwCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! colvwCell
+        let query = PFQuery(className: "Post")
+        query.orderByAscending("createdAt")
+        query.whereKey("user", equalTo: (PFUser.currentUser()?.objectId)!)
+        // Do any additional setup after loading the view.
+        do{
+            postArray = try query.findObjects()
+        }catch{
+            print("error")
+        }
+        let newPost = postArray[indexPath.row]
+        let newImage = newPost.objectForKey("image") as! PFFile
+        
+        do{
+        let imageData = try newImage.getData()
+        let finalizedImage = UIImage(data: imageData)
+        cell.imgCell.image = finalizedImage
+        }catch{
+            print("error")
+        }
+        
+        return cell
+    }
     
 }
