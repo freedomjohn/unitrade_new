@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Color of the tab bar and button
         UITabBar.appearance().barTintColor = UIColor.blackColor()
-        UITabBar.appearance().tintColor = UIColor.redColor()
+        UITabBar.appearance().tintColor = UIColor.whiteColor()
         
         // Chaning the color or navigation bar
         UINavigationBar.appearance().barTintColor = UIColor.blackColor()

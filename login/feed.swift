@@ -19,7 +19,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     var passArray = [PFObject]()
     
     // To show search bar on navigation bar
-    lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(30, 0, 250, 20))
+//    lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(30, 0, 250, 20))
 
     // Table View Setup
 //    @IBOutlet weak var tableView: UITableView!
@@ -28,10 +28,10 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     override func viewDidLoad() {
         super.viewDidLoad()
         // To show search bar on navigation bar
-        searchBar.placeholder = "Search UniTrade"
-        let leftNavBarButton = UIBarButtonItem(customView: searchBar)
-        self.navigationItem.leftBarButtonItem = leftNavBarButton
-        self.tableView.reloadData()
+//        searchBar.placeholder = "Search UniTrade"
+//        let leftNavBarButton = UIBarButtonItem(customView: searchBar)
+//        self.navigationItem.leftBarButtonItem = leftNavBarButton
+//        self.tableView.reloadData()
         
         //
     }

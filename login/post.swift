@@ -10,7 +10,30 @@ import UIKit
 import Parse
 
 
-class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate  {
+class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource    {
+    
+    // For category
+    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var selectCategory: UILabel!
+    var category = ["Electronics", "Movies, Books and Music", "Fashion and Accessories"]
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return category[row]
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return category.count
+    }
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectCategory.text = category[row]
+        selectCategory.textColor = UIColor.blackColor()
+        picker.hidden = true
+    }
+
+    @IBAction func selectCategoryBtn(sender: AnyObject) {
+        picker.hidden = false
+    }
     
     var i = 0;
     var checkPhoto = false
@@ -40,6 +63,12 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        
+        //for picker
+        picker.delegate = self //category picker
+        picker.dataSource = self
+        picker.hidden = true
+        selectCategory.textColor = UIColor.lightGrayColor()
         // Do any additional setup after loading the view.
     }
     
@@ -142,6 +171,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
             itemName.text = nil
             Price.text = nil
             itemDescription.text = nil
+            selectCategory.text = "Select a Category"
             post.saveInBackgroundWithBlock{
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {

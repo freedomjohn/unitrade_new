@@ -12,6 +12,7 @@ import ParseUI
 
 class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
+    @IBOutlet weak var userID: UILabel!
     @IBOutlet weak var myCollectionView: UICollectionView!
     @IBAction func LogoutBtn(sender: AnyObject) {
         // Log out and show the main page
@@ -27,6 +28,7 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        userID.text = PFUser.currentUser()?.username
     }
     
     override func didReceiveMemoryWarning() {
