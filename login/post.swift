@@ -144,7 +144,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     
     @IBAction func addPost(sender: AnyObject) {
         //var post = PFObject(className: "Post")
-        if (itemName.text == "" || Price.text == "" || itemDescription.text == "" || checkPhoto == false) {
+        if (itemName.text == "" || Price.text == "" || itemDescription.text == "" || checkPhoto == false || selectCategory.text == "Select a category") {
             
             // Showing popup alert
             let myAlert = UIAlertController(title: "Please complete all of the required fields before continuing.", message: nil, preferredStyle: UIAlertControllerStyle.Alert )
@@ -162,7 +162,6 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
             userPhoto["imageFile"] = imageFile
             userPhoto.saveInBackground()
             post["image"] = imageFile
-            
             post["name"] = itemName.text
             post["price"] = Price.text
             post["description"] = itemDescription.text
@@ -171,12 +170,17 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
             itemName.text = nil
             Price.text = nil
             itemDescription.text = nil
-            selectCategory.text = "Select a Category"
+            selectCategory.text = "Select a category"
+            selectCategory.textColor = UIColor.lightGrayColor()
             post.saveInBackgroundWithBlock{
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
                     self.tabBarController?.selectedIndex = 0 // open the first tab bar
                     //                    self.performSegueWithIdentifier("back", sender: nil)
+                    
+                    // moving back to root navigation controller
+                    self.navigationController?.popViewControllerAnimated(true)
+//                    self.navigationController?.popToRootViewControllerAnimated(true)
                     
                 }
                 
