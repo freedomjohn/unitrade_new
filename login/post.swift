@@ -14,8 +14,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     
     var i = 0;
     var checkPhoto = false
-    var didPost = false
-    
+
     // var post = PFObject(className: "Post")
     
     @IBOutlet weak var itemName: UITextField!
@@ -194,13 +193,5 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         let image: UIImage = UIImage(CGImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
         
         return image
-    }
-    
-    func getDidPost() -> Bool{
-        return didPost
-    }
-    
-    func setDidPost(){
-        didPost = false
     }
 }
