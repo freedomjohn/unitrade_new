@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Prs-JL-fFe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Prs-JL-fFe">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -183,8 +183,9 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J7V-h4-d1X">
-                                <rect key="frame" x="20" y="315" width="399" height="212"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J7V-h4-d1X">
+                                <rect key="frame" x="0.0" y="315" width="600" height="236"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1zd-2k-Tlo">
                                     <size key="itemSize" width="88" height="85"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -241,12 +242,15 @@
                             <constraint firstItem="VU9-A2-2fE" firstAttribute="leading" secondItem="U1H-Kq-1eP" secondAttribute="leadingMargin" id="3qi-FF-yCS"/>
                             <constraint firstItem="Pbh-Xq-54O" firstAttribute="leading" secondItem="VU9-A2-2fE" secondAttribute="trailing" constant="96" id="7Qu-0Z-Ywo"/>
                             <constraint firstItem="k3R-lu-esh" firstAttribute="centerX" secondItem="idE-qZ-y7L" secondAttribute="centerX" id="83z-P7-TpE"/>
+                            <constraint firstAttribute="trailing" secondItem="J7V-h4-d1X" secondAttribute="trailing" id="Axq-ab-APZ"/>
                             <constraint firstItem="VU9-A2-2fE" firstAttribute="top" secondItem="9e7-sl-aV9" secondAttribute="bottom" constant="9" id="Bfh-sM-j2w"/>
                             <constraint firstItem="idE-qZ-y7L" firstAttribute="top" secondItem="9e7-sl-aV9" secondAttribute="bottom" constant="23" id="PDW-po-30D"/>
+                            <constraint firstItem="J7V-h4-d1X" firstAttribute="leading" secondItem="U1H-Kq-1eP" secondAttribute="leading" id="bG0-4o-dVB"/>
                             <constraint firstItem="msk-5O-c0C" firstAttribute="leading" secondItem="idE-qZ-y7L" secondAttribute="trailing" constant="8" symbolic="YES" id="cHG-at-LhN"/>
                             <constraint firstItem="Pbh-Xq-54O" firstAttribute="baseline" secondItem="k3R-lu-esh" secondAttribute="baseline" id="dN9-bh-pQT"/>
                             <constraint firstItem="xNE-hN-gxm" firstAttribute="top" secondItem="VU9-A2-2fE" secondAttribute="bottom" constant="279" id="gkg-gN-zP2"/>
                             <constraint firstItem="k3R-lu-esh" firstAttribute="top" secondItem="idE-qZ-y7L" secondAttribute="bottom" constant="22" id="pVK-1c-SAA"/>
+                            <constraint firstItem="xNE-hN-gxm" firstAttribute="top" secondItem="J7V-h4-d1X" secondAttribute="bottom" id="pbE-Ic-dqL"/>
                             <constraint firstItem="msk-5O-c0C" firstAttribute="baseline" secondItem="idE-qZ-y7L" secondAttribute="baseline" id="pt8-nA-SiI"/>
                         </constraints>
                     </view>
