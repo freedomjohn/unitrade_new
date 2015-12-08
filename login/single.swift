@@ -26,7 +26,7 @@ class single: UIViewController{
     
     
     var objectId = String()
-    var userID = String()
+//    var userID = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +40,16 @@ class single: UIViewController{
         query.getObjectInBackgroundWithId(objectId) {
             (post: PFObject?, error: NSError?) -> Void in
             if error == nil && post != nil {
-                self.userID = (post?.objectForKey("user") as? String)!
-                let queryforuser = PFQuery(className:"User")
-                queryforuser.getObjectInBackgroundWithId(self.userID) {
-                    (postuser: PFObject?, error: NSError?) -> Void in
-                    if error == nil && postuser != nil {
-                        self.sellerName.text = postuser?.objectForKey("username") as? String
-                        
-                    }
-                }
+//                self.userID = (post?.objectForKey("user") as? String)!
+//                let queryforuser = PFQuery(className:"User")
+//                queryforuser.getObjectInBackgroundWithId(self.userID) {
+//                    (postuser: PFObject?, error: NSError?) -> Void in
+//                    if error == nil && postuser != nil {
+//                        self.sellerName.text = postuser?.objectForKey("username") as? String
+//                        
+//                    }
+//                }
+                
                 self.itemName.text = post?.objectForKey("name") as? String
                 // Bold the item name
                 self.itemName.font = UIFont.boldSystemFontOfSize(17.0)
