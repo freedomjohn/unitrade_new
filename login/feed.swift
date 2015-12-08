@@ -18,6 +18,11 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     var signUpViewController = PFSignUpViewController()
     var passArray = [PFObject]()
     
+    
+    var images = [PFFile]()
+    var imageCaptions = [String]()
+    var imagePrice = [String]()
+
     // To show search bar on navigation bar
 //    lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(30, 0, 250, 20))
 
@@ -27,6 +32,11 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: Selector("refreshPulled"), forControlEvents: UIControlEvents.ValueChanged)
+        
+        loadData()
+        self.tableView.reloadData()
         // To show search bar on navigation bar
 //        searchBar.placeholder = "Search UniTrade"
 //        let leftNavBarButton = UIBarButtonItem(customView: searchBar)
@@ -36,7 +46,29 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         //
     }
     
-    
+    func loadData() {
+        
+        var query = PFQuery(className: "Post")
+        query.orderByDescending("createdAt")
+        query.limit = 50
+        var postArray : [PFObject]
+        do {
+            postArray = try query.findObjects()
+            passArray = postArray
+            for post in postArray {
+                self.images.append(post["image"] as! PFFile)
+                self.imageCaptions.append(post["name"] as! String)
+                self.imagePrice.append(post["price"] as! String)
+            
+            }
+        }
+        catch {
+            print("error")
+        }
+        
+        self.tableView.reloadData()
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -63,49 +95,39 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("postcell", forIndexPath: indexPath) as! postTableViewCell
-        let query = PFQuery(className: "Post")
-        query.orderByDescending("createdAt")
-        query.limit = 50
-        var postArray : [PFObject]
-        do {
-            postArray = try query.findObjects()
-            passArray = postArray
-            let newPost = postArray[indexPath.row]
-            let newImage = newPost.objectForKey("image") as! PFFile
-            cell.titlename.text = newPost.objectForKey("name")?.capitalizedString
-            cell.des.text = "$\(newPost.objectForKey("price")!)"
-            var imageData = try newImage.getData()
-            var finalizedImage = UIImage(data: imageData)
-            cell.imagedis.image = finalizedImage
-            
-            /*
-            newImage.getDataInBackgroundWithBlock({
-                (imageData: NSData?, error: NSError?) -> Void in
-                if(error == nil){
-                    let cimage = UIImage(data: imageData!)
-                    cell.imagedis.image = cimage
-                   // cell.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
-
-                }
-            })
-
-            var imageToLoad = self.images[indexPath.row] as PFFile
-            var imageCaption = self.imageCaptions[indexPath.row] as String
-            var imageDate = self.imageDates[indexPath.row] as String
-            var imageUser = self.imageUsers[indexPath.row] as String
-            
-            var imageData = imageToLoad.getData()
-            var finalizedImage = UIImage(data: imageData!)
-            cell.postImageView.image = finalizedImage
-            cell.postCaption.text = imageCaption
-            cell.addedBy.text = imageUser
-            cell.dateLabel.text = imageDate
+        
+       /*
+        var imageToLoad = self.images[indexPath.row] as PFFile
+        var imageCaption = self.imageCaptions[indexPath.row] as String
+        var imageDate = self.imageDates[indexPath.row] as String
+        var imageUser = self.imageUsers[indexPath.row] as String
+        
+        var imageData = imageToLoad.getData()
+        var finalizedImage = UIImage(data: imageData!)
+        
+        cell.postImageView.image = finalizedImage
+        cell.postCaption.text = imageCaption
+        cell.addedBy.text = imageUser
+        cell.dateLabel.text = imageDate
+        
 */
-            
-            
-        }catch{
+        var imageToLoad = self.images[indexPath.row] as PFFile
+        var imageCaption = self.imageCaptions[indexPath.row] as String
+        var imagePrice = self.imagePrice[indexPath.row] as String
+        do {
+        var imageData = try imageToLoad.getData()
+        var finalizedImage = UIImage(data: imageData)
+        
+        
+            cell.titlename.text = imageCaption.capitalizedString
+            cell.des.text = "$\(imagePrice)"
+            cell.imagedis.image = finalizedImage
+        }
+        catch {
             print("error")
         }
+    
+    
         return cell
     }
     
