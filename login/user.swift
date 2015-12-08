@@ -12,6 +12,7 @@ import ParseUI
 
 class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
+    var passArray = [PFObject]()
     @IBOutlet weak var userID: UILabel!
     @IBOutlet weak var numPosts: UILabel!
     
@@ -71,6 +72,7 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         // Do any additional setup after loading the view.
         do{
             postArray = try query.findObjects()
+            passArray = postArray
         }catch{
             print("error")
         }
@@ -87,5 +89,16 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         
         return cell
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var indexPaths = self.myCollectionView.indexPathsForSelectedItems()
+        let indexPath = indexPaths![0] as NSIndexPath
+        let DestViewController = segue.destinationViewController as! modify
+        let pass = passArray[indexPath.row]
+        DestViewController.postID = pass.objectId!
+        
+        
+    }
+    
     
 }

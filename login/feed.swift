@@ -196,11 +196,11 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
         
-        var indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow!
+        let indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow!
         
-        var DestViewController = segue.destinationViewController as! single
+        let DestViewController = segue.destinationViewController as! single
         
-        var pass = passArray[indexPath.row]
+        let pass = passArray[indexPath.row]
         
         DestViewController.objectId = pass.objectId!
         

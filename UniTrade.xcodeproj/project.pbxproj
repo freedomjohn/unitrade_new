@@ -33,6 +33,7 @@
 		3A9C1F811BF54B7B00666FFB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9C1F801BF54B7B00666FFB /* SystemConfiguration.framework */; };
 		3A9C1F831BF54B8700666FFB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9C1F821BF54B8700666FFB /* libz.tbd */; };
 		3A9C1F851BF54B9200666FFB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9C1F841BF54B9200666FFB /* libsqlite3.tbd */; };
+		3ACF62461C1673BE00890494 /* modify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF62451C1673BE00890494 /* modify.swift */; };
 		58BE112C1C13EC46003D1018 /* postTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE112A1C13EC46003D1018 /* postTableViewCell.swift */; };
 		6DBDD931745A796EA5F87C0C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD234E565AFD5BA0D6E6C7B /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		3A9C1F801BF54B7B00666FFB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3A9C1F821BF54B8700666FFB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		3A9C1F841BF54B9200666FFB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3ACF62451C1673BE00890494 /* modify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = modify.swift; sourceTree = "<group>"; };
 		58BE112A1C13EC46003D1018 /* postTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = postTableViewCell.swift; path = ../postTableViewCell.swift; sourceTree = "<group>"; };
 		AC68C74028B394A8583173AB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC56483C35A756F3A82DFCC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				324C35BC1BF68C1900AC7BB8 /* filter.swift */,
 				3A2796451C14E95E004B1C5B /* single.swift */,
 				3A2796471C14FB66004B1C5B /* colvwCell.swift */,
+				3ACF62451C1673BE00890494 /* modify.swift */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				58BE112C1C13EC46003D1018 /* postTableViewCell.swift in Sources */,
 				3A2796481C14FB67004B1C5B /* colvwCell.swift in Sources */,
 				3A9C1F3F1BF5497F00666FFB /* AppDelegate.swift in Sources */,
+				3ACF62461C1673BE00890494 /* modify.swift in Sources */,
 				324C35BD1BF68C1900AC7BB8 /* filter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
