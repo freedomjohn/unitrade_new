@@ -9,16 +9,21 @@
 import UIKit
 import Parse
 
-class modify: UIViewController{
+class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerControllerDelegate{
    
     @IBOutlet weak var itemName: UITextField!
     @IBOutlet weak var itemPrice: UITextField!
     @IBOutlet weak var itemDescription: UITextField!
     @IBOutlet weak var myImgView: UIImageView!
+    
+    let imagePicker: UIImagePickerController! = UIImagePickerController()
+    
+    
     var postID  = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
         let query = PFQuery(className:"Post")
         query.getObjectInBackgroundWithId(postID) {
             (post: PFObject?, error: NSError?) -> Void in
@@ -41,6 +46,56 @@ class modify: UIViewController{
         }
 
     }
+    
+    @IBAction func takePicture(sender: AnyObject) {
+        var imageFromSource = UIImagePickerController()
+        imageFromSource.delegate = self
+        imageFromSource.allowsEditing = false
+        //create alert controller
+        let myAlert = UIAlertController(title: "take photo", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet )
+        
+        //Create and add the Cancel action
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+            //Just dismiss the action sheet
+        }
+        myAlert.addAction(cancelAction)
+        //Create and add first option action
+        let takePictureAction: UIAlertAction = UIAlertAction(title: "Take Picture using camera", style: .Default) { action -> Void in
+            //Code for launching the camera
+            if
+                UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+                    imageFromSource.sourceType = UIImagePickerControllerSourceType.Camera
+            }
+            else{
+                imageFromSource.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            }
+            self.presentViewController(imageFromSource, animated: true, completion: nil)
+            
+        }
+        myAlert.addAction(takePictureAction)
+        //Create and add a second option action
+        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Choose From Camera Roll", style: .Default) { action -> Void in
+            //Code for picking from camera roll
+            imageFromSource.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.presentViewController(imageFromSource, animated: true, completion: nil)
+        }
+        myAlert.addAction(choosePictureAction)
+        
+        //show the alert
+        self.presentViewController(myAlert, animated: true, completion: nil)
+        
+        //imageFromSource.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        var temp : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        myImgView.image = temp
+        self.dismissViewControllerAnimated( true , completion: {})
+    }
+    
+    
     
     @IBAction func SaveChange(sender: AnyObject) {
         let query = PFQuery(className:"Post")

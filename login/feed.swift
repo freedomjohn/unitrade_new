@@ -29,7 +29,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     // Table View Setup
 //    @IBOutlet weak var tableView: UITableView!
 //    var dataArray: NSMutableArray! = NSMutableArray() // Array of data (each cell)
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         var refreshControl = UIRefreshControl()
@@ -37,13 +37,16 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         
         loadData()
         self.tableView.reloadData()
-        // To show search bar on navigation bar
-//        searchBar.placeholder = "Search UniTrade"
-//        let leftNavBarButton = UIBarButtonItem(customView: searchBar)
-//        self.navigationItem.leftBarButtonItem = leftNavBarButton
-//        self.tableView.reloadData()
+       
+    }
+    
+    func refreshPulled() {
         
-        //
+        loadData()
+        self.tableView.reloadData()
+        
+        refreshControl?.endRefreshing()
+        
     }
     
     func loadData() {

@@ -128,16 +128,6 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         var temp : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         currentImage.image = temp
-        //currentImage.image = cropToBounds(temp, width: 0.9,height: 0.1)
-        //currentImage.contentMode = UIViewContentMode.ScaleAspectFit
-        //let imageData = UIImageJPEGRepresentation(temp, 0.2)
-        //let imageFile = PFFile(name:"image.jpeg", data:imageData!)
-        
-        //var userPhoto = PFObject(className:"UserPhoto")
-        //userPhoto["imageName"] = "\(i)"
-        //userPhoto["imageFile"] = imageFile
-        //userPhoto.saveInBackground()
-        //post["image"] = imageFile
         self.dismissViewControllerAnimated( true , completion: {})
     }
     
