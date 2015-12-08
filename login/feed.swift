@@ -30,14 +30,15 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
 //    @IBOutlet weak var tableView: UITableView!
 //    var dataArray: NSMutableArray! = NSMutableArray() // Array of data (each cell)
    
-    override func viewDidLoad() {
+    
+override func viewDidLoad() {
         super.viewDidLoad()
         var refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector("refreshPulled"), forControlEvents: UIControlEvents.ValueChanged)
         
         loadData()
         self.tableView.reloadData()
-       
+    
     }
     
     func refreshPulled() {
@@ -123,8 +124,9 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     }
     
     override func viewDidAppear(animated: Bool) {
+
         super.viewDidAppear(animated)
-        self.tableView.reloadData()
+//        self.tableView.reloadData()
         self.logInController.fields = [PFLogInFields.UsernameAndPassword
             , PFLogInFields.LogInButton
             , PFLogInFields.SignUpButton
@@ -146,6 +148,9 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         if(PFUser.currentUser() == nil){
             self.presentViewController(self.logInController, animated:true, completion: nil)
         }
+        
+        // hide navigation bar on scroll
+        navigationController?.hidesBarsOnSwipe = true
         
     }
 
