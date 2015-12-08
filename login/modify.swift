@@ -41,4 +41,60 @@ class modify: UIViewController{
         }
 
     }
+    
+    @IBAction func SaveChange(sender: AnyObject) {
+        let query = PFQuery(className:"Post")
+        query.getObjectInBackgroundWithId(postID) {
+            (post: PFObject?, error: NSError?) -> Void in
+            if error == nil && post != nil {
+                let imageData = UIImageJPEGRepresentation(self.myImgView.image!, 0.01)
+                let imageFile = PFFile(name:"image.jpeg", data:imageData!)
+                post!["image"] = imageFile
+                post!["name"] = self.itemName.text
+                post!["price"] = self.itemPrice.text
+                post!["description"] = self.itemDescription.text
+                //post["category"] = selectCategory.text
+                //post!["user"] = PFUser.currentUser()?.objectId
+                post!.saveInBackgroundWithBlock{
+                    (success: Bool, error: NSError?) -> Void in
+                    if (success) {
+                        self.tabBarController?.selectedIndex = 0 // open the first tab bar
+                        //                    self.performSegueWithIdentifier("back", sender: nil)
+                        
+                        // moving back to root navigation controller
+                        self.navigationController?.popViewControllerAnimated(true)
+                        //                    self.navigationController?.popToRootViewControllerAnimated(true)
+                        
+                    }
+                    
+                }
+            } else {
+                print(error)
+            }
+        }
+
+    }
+    
+    @IBAction func DeletePost(sender: AnyObject) {
+        let query = PFQuery(className:"Post")
+        query.getObjectInBackgroundWithId(postID) {
+            (post: PFObject?, error: NSError?) -> Void in
+            if error == nil && post != nil {
+                post?.deleteInBackgroundWithBlock{
+                    (success: Bool, error: NSError?) -> Void in
+                    if (success) {
+                        self.tabBarController?.selectedIndex = 0 // open the first tab bar
+                        //                    self.performSegueWithIdentifier("back", sender: nil)
+                    
+                        // moving back to root navigation controller
+                        self.navigationController?.popViewControllerAnimated(true)
+                    //                    self.navigationController?.popToRootViewControllerAnimated(true)
+                    }
+                }
+            } else {
+                print(error)
+            }
+        }
+
+    }
 }
