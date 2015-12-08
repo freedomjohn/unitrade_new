@@ -16,26 +16,49 @@ class single: UIViewController{
     
     @IBOutlet weak var itemName: UILabel!
     
-    @IBOutlet weak var category: UILabel!
+    //    @IBOutlet weak var category: UILabel!
     
     @IBOutlet weak var price: UILabel!
     
     @IBOutlet weak var itemDescription: UILabel!
     
+    @IBOutlet weak var sellerName: UILabel!
     
     
     var objectId = String()
+    var userID = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Show the navigation bar
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.hidesBarsOnSwipe = false
+        
         //print(objectId)
-        var query = PFQuery(className:"Post")
+        let query = PFQuery(className:"Post")
         query.getObjectInBackgroundWithId(objectId) {
             (post: PFObject?, error: NSError?) -> Void in
             if error == nil && post != nil {
+                self.userID = (post?.objectForKey("user") as? String)!
+                let queryforuser = PFQuery(className:"User")
+                queryforuser.getObjectInBackgroundWithId(self.userID) {
+                    (postuser: PFObject?, error: NSError?) -> Void in
+                    if error == nil && postuser != nil {
+                        self.sellerName.text = postuser?.objectForKey("username") as? String
+                        
+                    }
+                }
                 self.itemName.text = post?.objectForKey("name") as? String
-                self.category.text = post?.objectForKey("category") as? String
-                self.price.text = post?.objectForKey("price") as? String
+                // Bold the item name
+                self.itemName.font = UIFont.boldSystemFontOfSize(17.0)
+                //                self.category.text = post?.objectForKey("category") as? String
+                //Customize price label
+                let priceString = post?.objectForKey("price")! as? String
+                self.price.text = "$\(priceString!)"
+                self.price.textColor = UIColor.orangeColor()
+                self.price.font = UIFont(name: "HelveticaNeue", size: CGFloat(20))
+                
                 self.itemDescription.text = post?.objectForKey("description") as? String
                 let newImage = post?.objectForKey("image") as! PFFile
                 newImage.getDataInBackgroundWithBlock({

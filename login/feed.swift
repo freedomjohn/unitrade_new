@@ -96,15 +96,18 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         
         let cell = tableView.dequeueReusableCellWithIdentifier("postcell", forIndexPath: indexPath) as! postTableViewCell
         
-        var imageToLoad = self.images[indexPath.row] as PFFile
-        var imageCaption = self.imageCaptions[indexPath.row] as String
-        var imagePrice = self.imagePrice[indexPath.row] as String
+        let imageToLoad = self.images[indexPath.row] as PFFile
+        let imageCaption = self.imageCaptions[indexPath.row] as String
+        let imagePrice = self.imagePrice[indexPath.row] as String
         do {
-        var imageData = try imageToLoad.getData()
-        var finalizedImage = UIImage(data: imageData)
+        let imageData = try imageToLoad.getData()
+        let finalizedImage = UIImage(data: imageData)
         
         
             cell.titlename.text = imageCaption.capitalizedString
+            // Bold the title name
+            cell.titlename.font = UIFont.boldSystemFontOfSize(17.0)
+            
             cell.des.text = "$\(imagePrice)"
             cell.imagedis.image = finalizedImage
         }
