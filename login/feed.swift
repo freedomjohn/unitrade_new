@@ -29,29 +29,30 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     // Table View Setup
 //    @IBOutlet weak var tableView: UITableView!
 //    var dataArray: NSMutableArray! = NSMutableArray() // Array of data (each cell)
-   
     
+    override func viewWillAppear(animated: Bool) {
+        loadData()
+    }
 override func viewDidLoad() {
         super.viewDidLoad()
-        var refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: Selector("refreshPulled"), forControlEvents: UIControlEvents.ValueChanged)
-        
-        loadData()
-        self.tableView.reloadData()
+        // doesn't overlap with battery bar
+//        tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
     
+//        var refreshControl = UIRefreshControl()
+//        refreshControl.addTarget(self, action: Selector("refreshPulled"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
-    func refreshPulled() {
-        
-        loadData()
-        self.tableView.reloadData()
-        
-        refreshControl?.endRefreshing()
-        
-    }
+//    func refreshPulled() {
+//        
+//        loadData()
+//        self.tableView.reloadData()
+//
+//        refreshControl?.endRefreshing()
+//        
+//    }
+    
     
     func loadData() {
-        
         var query = PFQuery(className: "Post")
         query.orderByDescending("createdAt")
         query.limit = 50
@@ -63,16 +64,14 @@ override func viewDidLoad() {
                 self.images.append(post["image"] as! PFFile)
                 self.imageCaptions.append(post["name"] as! String)
                 self.imagePrice.append(post["price"] as! String)
-            
+                
             }
         }
         catch {
             print("error")
         }
-        
         self.tableView.reloadData()
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -97,7 +96,6 @@ override func viewDidLoad() {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("postcell", forIndexPath: indexPath) as! postTableViewCell
         
         let imageToLoad = self.images[indexPath.row] as PFFile
@@ -124,9 +122,8 @@ override func viewDidLoad() {
     }
     
     override func viewDidAppear(animated: Bool) {
-
         super.viewDidAppear(animated)
-//        self.tableView.reloadData()
+        
         self.logInController.fields = [PFLogInFields.UsernameAndPassword
             , PFLogInFields.LogInButton
             , PFLogInFields.SignUpButton
