@@ -53,7 +53,7 @@ override func viewDidLoad() {
     
     
     func loadData() {
-        var query = PFQuery(className: "Post")
+        let query = PFQuery(className: "Post")
         query.orderByDescending("createdAt")
         query.limit = 50
         var postArray : [PFObject]
@@ -92,7 +92,7 @@ override func viewDidLoad() {
         } catch {
             print("error2")
         }
-        return retVal // number of posts
+        return retVal // loading number of posts
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -206,6 +206,9 @@ override func viewDidLoad() {
             user.text = "nobody"
         }
     }
+    
+    
+    
     
     @IBOutlet weak var user: UILabel!
     

@@ -1,13 +1,17 @@
 {
   "images" : [
     {
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "user_male2-512.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "user_male2-512.png",
-      "unassigned" : true,
-      "scale" : "1x"
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

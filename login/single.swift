@@ -27,10 +27,10 @@ class single: UIViewController{
     
     var objectId = String()
 //    var userID = String()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Show the navigation bar and lock it
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.hidesBarsOnSwipe = false

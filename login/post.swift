@@ -169,7 +169,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
                     //                    self.performSegueWithIdentifier("back", sender: nil)
                     
                     // moving back to root navigation controller
-                    self.navigationController?.popViewControllerAnimated(true)
+//                    self.navigationController?.popViewControllerAnimated(true)
 //                    self.navigationController?.popToRootViewControllerAnimated(true)
                     
                 }

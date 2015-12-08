@@ -12,12 +12,12 @@
 		324C35BD1BF68C1900AC7BB8 /* filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324C35BC1BF68C1900AC7BB8 /* filter.swift */; };
 		324C4D741BF58D890061E3A6 /* Supporting File in Resources */ = {isa = PBXBuildFile; fileRef = 324C4D731BF58D890061E3A6 /* Supporting File */; };
 		3261A7011C16D78800F547F2 /* email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261A7001C16D78800F547F2 /* email.swift */; };
+		3261A7051C16F0EE00F547F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3261A7041C16F0EE00F547F2 /* Assets.xcassets */; };
 		32A3967F1C045EF0003B3D95 /* feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A3967E1C045EF0003B3D95 /* feed.swift */; };
 		3A2796461C14E95E004B1C5B /* single.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2796451C14E95E004B1C5B /* single.swift */; };
 		3A2796481C14FB67004B1C5B /* colvwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2796471C14FB66004B1C5B /* colvwCell.swift */; };
 		3A9C1F3F1BF5497F00666FFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C1F3E1BF5497F00666FFB /* AppDelegate.swift */; };
 		3A9C1F441BF5497F00666FFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C1F421BF5497F00666FFB /* Main.storyboard */; };
-		3A9C1F461BF5497F00666FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C1F451BF5497F00666FFB /* Assets.xcassets */; };
 		3A9C1F491BF5497F00666FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9C1F471BF5497F00666FFB /* LaunchScreen.storyboard */; };
 		3A9C1F541BF5497F00666FFB /* loginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C1F531BF5497F00666FFB /* loginTests.swift */; };
 		3A9C1F5F1BF5498000666FFB /* loginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9C1F5E1BF5498000666FFB /* loginUITests.swift */; };
@@ -62,13 +62,13 @@
 		324C35BC1BF68C1900AC7BB8 /* filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = filter.swift; sourceTree = "<group>"; };
 		324C4D731BF58D890061E3A6 /* Supporting File */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Supporting File"; sourceTree = "<group>"; };
 		3261A7001C16D78800F547F2 /* email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = email.swift; sourceTree = "<group>"; };
+		3261A7041C16F0EE00F547F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32A3967E1C045EF0003B3D95 /* feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = feed.swift; sourceTree = "<group>"; };
 		3A2796451C14E95E004B1C5B /* single.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = single.swift; sourceTree = "<group>"; };
 		3A2796471C14FB66004B1C5B /* colvwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colvwCell.swift; sourceTree = "<group>"; };
 		3A9C1F3B1BF5497F00666FFB /* UniTrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniTrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9C1F3E1BF5497F00666FFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A9C1F431BF5497F00666FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3A9C1F451BF5497F00666FFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A9C1F481BF5497F00666FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A9C1F4A1BF5497F00666FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A9C1F4F1BF5497F00666FFB /* UniTrade.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniTrade.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,9 +194,9 @@
 			children = (
 				3A9C1F3E1BF5497F00666FFB /* AppDelegate.swift */,
 				3A9C1F421BF5497F00666FFB /* Main.storyboard */,
+				3261A7041C16F0EE00F547F2 /* Assets.xcassets */,
 				58BE112A1C13EC46003D1018 /* postTableViewCell.swift */,
 				32A3967E1C045EF0003B3D95 /* feed.swift */,
-				3A9C1F451BF5497F00666FFB /* Assets.xcassets */,
 				3A9C1F471BF5497F00666FFB /* LaunchScreen.storyboard */,
 				3A9C1F4A1BF5497F00666FFB /* Info.plist */,
 				3231DDA61BF58F920090FC80 /* post.swift */,
@@ -337,8 +337,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A9C1F491BF5497F00666FFB /* LaunchScreen.storyboard in Resources */,
-				3A9C1F461BF5497F00666FFB /* Assets.xcassets in Resources */,
 				324C4D741BF58D890061E3A6 /* Supporting File in Resources */,
+				3261A7051C16F0EE00F547F2 /* Assets.xcassets in Resources */,
 				3A9C1F441BF5497F00666FFB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,6 +23,12 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Changing color of price field
+        itemPrice.textColor = UIColor.orangeColor()
+        itemName.font = UIFont.boldSystemFontOfSize(17.0) // bold item name
+        
+        
+        
         imagePicker.delegate = self
         let query = PFQuery(className:"Post")
         query.getObjectInBackgroundWithId(postID) {
@@ -114,12 +120,8 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
                     (success: Bool, error: NSError?) -> Void in
                     if (success) {
                         self.tabBarController?.selectedIndex = 0 // open the first tab bar
-                        //                    self.performSegueWithIdentifier("back", sender: nil)
-                        
                         // moving back to root navigation controller
-                        self.navigationController?.popViewControllerAnimated(true)
-                        //                    self.navigationController?.popToRootViewControllerAnimated(true)
-                        
+                        self.navigationController?.popToRootViewControllerAnimated(true)
                     }
                     
                 }
@@ -138,12 +140,9 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
                 post?.deleteInBackgroundWithBlock{
                     (success: Bool, error: NSError?) -> Void in
                     if (success) {
-                        self.tabBarController?.selectedIndex = 0 // open the first tab bar
-                        //                    self.performSegueWithIdentifier("back", sender: nil)
-                    
                         // moving back to root navigation controller
                         self.navigationController?.popViewControllerAnimated(true)
-                    //                    self.navigationController?.popToRootViewControllerAnimated(true)
+                    //self.navigationController?.popToRootViewControllerAnimated(true)
                     }
                 }
             } else {
