@@ -142,7 +142,7 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
                     if (success) {
                         // moving back to root navigation controller
                         self.navigationController?.popViewControllerAnimated(true)
-                    //self.navigationController?.popToRootViewControllerAnimated(true)
+//                    self.navigationController?.popToRootViewControllerAnimated(true)
                     }
                 }
             } else {

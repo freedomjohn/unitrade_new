@@ -28,6 +28,9 @@ class single: UIViewController{
     var objectId = String()
 //    var userID = String()
 
+    override func viewDidDisappear(animated: Bool) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
