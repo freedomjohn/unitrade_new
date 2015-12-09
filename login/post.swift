@@ -48,7 +48,9 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     
     @IBOutlet weak var currentImage: UIImageView!
     
-    @IBOutlet weak var itemDescription: UITextField!
+    @IBOutlet weak var pictureBtn: UIButton!
+    
+    @IBOutlet weak var itemDescription: UITextView!
     
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     
@@ -65,6 +67,14 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        
+        //pictureBtn styling
+        pictureBtn.layer.cornerRadius = 5
+        
+        //itemDescription styling
+//        itemDescription.layer.cornerRadius = 5.0
+//        itemDescription.layer.borderColor = UIColor.lightGrayColor().CGColor
+//        itemDescription.layer.borderWidth = 1.75
         
         //for picker
         picker.delegate = self //category picker
