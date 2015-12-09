@@ -36,6 +36,7 @@
 		3A9C1F851BF54B9200666FFB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9C1F841BF54B9200666FFB /* libsqlite3.tbd */; };
 		3ACF62461C1673BE00890494 /* modify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF62451C1673BE00890494 /* modify.swift */; };
 		58BE112C1C13EC46003D1018 /* postTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE112A1C13EC46003D1018 /* postTableViewCell.swift */; };
+		58CD32771C17E3080069E837 /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CD32761C17E3080069E837 /* ImageUtil.swift */; };
 		6DBDD931745A796EA5F87C0C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD234E565AFD5BA0D6E6C7B /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		3A9C1F841BF54B9200666FFB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3ACF62451C1673BE00890494 /* modify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = modify.swift; sourceTree = "<group>"; };
 		58BE112A1C13EC46003D1018 /* postTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = postTableViewCell.swift; path = ../postTableViewCell.swift; sourceTree = "<group>"; };
+		58CD32761C17E3080069E837 /* ImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageUtil.swift; path = login/ImageUtil.swift; sourceTree = "<group>"; };
 		AC68C74028B394A8583173AB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC56483C35A756F3A82DFCC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FDD234E565AFD5BA0D6E6C7B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 				324C4D731BF58D890061E3A6 /* Supporting File */,
 				3A9C1F841BF54B9200666FFB /* libsqlite3.tbd */,
 				3A9C1F821BF54B8700666FFB /* libz.tbd */,
+				58CD32761C17E3080069E837 /* ImageUtil.swift */,
 				3A9C1F801BF54B7B00666FFB /* SystemConfiguration.framework */,
 				3A9C1F7E1BF54B7000666FFB /* StoreKit.framework */,
 				3A9C1F7C1BF54B6600666FFB /* Security.framework */,
@@ -418,6 +421,7 @@
 				3231DDA71BF58F920090FC80 /* post.swift in Sources */,
 				3A2796461C14E95E004B1C5B /* single.swift in Sources */,
 				58BE112C1C13EC46003D1018 /* postTableViewCell.swift in Sources */,
+				58CD32771C17E3080069E837 /* ImageUtil.swift in Sources */,
 				3A2796481C14FB67004B1C5B /* colvwCell.swift in Sources */,
 				3A9C1F3F1BF5497F00666FFB /* AppDelegate.swift in Sources */,
 				3ACF62461C1673BE00890494 /* modify.swift in Sources */,

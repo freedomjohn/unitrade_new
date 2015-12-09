@@ -13,6 +13,8 @@ import Parse
 class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource    {
     
     // For category
+    let imagecrop = ImageUtil()
+    
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var selectCategory: UILabel!
     var category = ["Electronics", "Movies, Books and Music", "Fashion and Accessories"]
@@ -126,8 +128,8 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         var temp : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-        currentImage.image = temp
+        let croppedImage: UIImage = imagecrop.cropToSquare(image: temp )
+        currentImage.image = croppedImage
         self.dismissViewControllerAnimated( true , completion: {})
     }
     
@@ -144,6 +146,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         }
         else {
             var post = PFObject(className: "Post")
+
             let imageData = UIImageJPEGRepresentation(currentImage.image!, 0.01)
             let imageFile = PFFile(name:"image.jpeg", data:imageData!)
             
@@ -180,41 +183,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         }
         self.view.endEditing(true)
     }
-    
-    
-    
-    func cropToBounds(image: UIImage, width: Double, height: Double) -> UIImage {
+
         
-        let contextImage: UIImage = UIImage(CGImage: image.CGImage!)
         
-        let contextSize: CGSize = contextImage.size
-        
-        var posX: CGFloat = 0.0
-        var posY: CGFloat = 0.0
-        var cgwidth: CGFloat = CGFloat(width)
-        var cgheight: CGFloat = CGFloat(height)
-        
-        // See what size is longer and create the center off of that
-        if contextSize.width > contextSize.height {
-            posX = ((contextSize.width - contextSize.height) / 2)
-            posY = 0
-            cgwidth = contextSize.height
-            cgheight = contextSize.height
-        } else {
-            posX = 0
-            posY = ((contextSize.height - contextSize.width) / 2)
-            cgwidth = contextSize.width
-            cgheight = contextSize.width
-        }
-        
-        let rect: CGRect = CGRectMake(posX, posY, cgwidth, cgheight)
-        
-        // Create bitmap image from context using the rect
-        let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)!
-        
-        // Create a new image based on the imageRef and rotate back to the original orientation
-        let image: UIImage = UIImage(CGImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
-        
-        return image
-    }
 }
