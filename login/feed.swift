@@ -14,6 +14,7 @@ import Bolts
 class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
 
     // Parse setup
+    @IBOutlet var mytableview: UITableView!
     var logInController = PFLogInViewController()
     var signUpViewController = PFSignUpViewController()
     var passArray = [PFObject]()
@@ -31,29 +32,36 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
 //    var dataArray: NSMutableArray! = NSMutableArray() // Array of data (each cell)
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
         loadData()
+        
     }
-override func viewDidLoad() {
+    
+    
+     override func viewDidLoad() {
+     
         super.viewDidLoad()
-        // doesn't overlap with battery bar
-//        tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
+        self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
     
-//        var refreshControl = UIRefreshControl()
-//        refreshControl.addTarget(self, action: Selector("refreshPulled"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
-//    func refreshPulled() {
-//        
-//        loadData()
-//        self.tableView.reloadData()
-//
-//        refreshControl?.endRefreshing()
-//        
-//    }
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service, for example...
+        
+        // Simply adding an object to the data source for this example
+        loadData()
+        refreshControl.endRefreshing()
+    }
     
     
     func loadData() {
-        let query = PFQuery(className: "Post")
+        self.images = [PFFile]()
+        self.imageCaptions = [String]()
+        self.imagePrice = [String]()
+
+        var query = PFQuery(className: "Post")
         query.orderByDescending("createdAt")
         query.limit = 50
         var postArray : [PFObject]
@@ -96,7 +104,7 @@ override func viewDidLoad() {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("postcell", forIndexPath: indexPath) as! postTableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("postcell", forIndexPath: indexPath) as! postTableViewCell
         
         let imageToLoad = self.images[indexPath.row] as PFFile
         let imageCaption = self.imageCaptions[indexPath.row] as String

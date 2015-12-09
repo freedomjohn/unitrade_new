@@ -506,6 +506,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="UniTrade" id="3wk-sS-jyy"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="pzr-P6-pXX">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
+                    <connections>
+                        <outlet property="mytableview" destination="lmj-4h-wnP" id="Gx7-eo-eZB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FsL-bO-qqz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
