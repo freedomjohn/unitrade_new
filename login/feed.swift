@@ -104,7 +104,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("postcell", forIndexPath: indexPath) as! postTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("postcell", forIndexPath: indexPath) as! postTableViewCell
         
         let imageToLoad = self.images[indexPath.row] as PFFile
         let imageCaption = self.imageCaptions[indexPath.row] as String
@@ -119,6 +119,8 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
             cell.titlename.font = UIFont.boldSystemFontOfSize(17.0)
             
             cell.des.text = "$\(imagePrice)"
+            cell.des.textColor = UIColor.orangeColor()
+            
             cell.imagedis.image = finalizedImage
         }
         catch {
