@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 
-class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource    {
+class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate    {
     
     // For category
     let imagecrop = ImageUtil()
@@ -64,16 +64,31 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         self.view.endEditing(true)
     }
     
+    // for description
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.textColor == UIColor.lightGrayColor() {
+            textView.text = nil
+            textView.textColor = UIColor.blackColor()
+        }
+    }
+    func textViewDidEndEditing(textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Write a short description"
+            textView.textColor = UIColor.lightGrayColor()
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
         // Edit item name first
-        itemName.becomeFirstResponder()
+//        itemName.becomeFirstResponder()
         
         // itemDescription place holder
-        itemDescription.text = "Placeholder"
+        itemDescription.text = "Write a short description"
         itemDescription.textColor = UIColor.lightGrayColor()
+        itemDescription.delegate? = self
         
         
         //pictureBtn styling
