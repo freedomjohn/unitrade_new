@@ -68,6 +68,13 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        // Edit item name first
+        itemName.becomeFirstResponder()
+        
+        // itemDescription place holder
+        itemDescription.text = "Placeholder"
+        itemDescription.textColor = UIColor.lightGrayColor()
+        
         
         //pictureBtn styling
         pictureBtn.layer.cornerRadius = 5
