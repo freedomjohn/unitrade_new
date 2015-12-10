@@ -42,6 +42,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
 
     // var post = PFObject(className: "Post")
     
+    @IBOutlet weak var ssss: UITextView!
     @IBOutlet weak var itemName: UITextField!
     
     @IBOutlet weak var Price: UITextField!
@@ -72,6 +73,9 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         pictureBtn.layer.cornerRadius = 5
         
         //itemDescription styling
+        itemDescription.layer.cornerRadius = 5.0
+        itemDescription.layer.borderWidth = 1.75
+        itemDescription.layer.borderColor = UIColor.lightGrayColor().CGColor
 //        itemDescription.layer.cornerRadius = 5.0
 //        itemDescription.layer.borderColor = UIColor.lightGrayColor().CGColor
 //        itemDescription.layer.borderWidth = 1.75

@@ -114,11 +114,13 @@
                     <connections>
                         <outlet property="Price" destination="v8H-Q6-dCa" id="FnQ-l6-Ckh"/>
                         <outlet property="currentImage" destination="nbS-rq-qNQ" id="3bb-Hj-v1N"/>
+                        <outlet property="itemDescription" destination="a6o-oY-84U" id="DmM-ux-ev6"/>
                         <outlet property="itemName" destination="IoG-FA-xB9" id="ka8-Gv-g7C"/>
                         <outlet property="picker" destination="Mkd-ny-SZK" id="8dZ-Mj-HOy"/>
                         <outlet property="pictureBtn" destination="S3R-nR-qAr" id="PTd-Xh-OGu"/>
                         <outlet property="postBtn" destination="dDk-kn-WqN" id="0cd-Ad-RMw"/>
                         <outlet property="selectCategory" destination="eee-hJ-01m" id="VQq-eX-f4B"/>
+                        <outlet property="ssss" destination="a6o-oY-84U" id="pbz-Bu-LpY"/>
                         <segue destination="Prs-JL-fFe" kind="show" identifier="back" id="mm5-Fp-1m3"/>
                     </connections>
                 </viewController>
