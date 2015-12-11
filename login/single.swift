@@ -20,7 +20,7 @@ class single: UIViewController{
     
     @IBOutlet weak var price: UILabel!
     
-    @IBOutlet weak var itemDescription: UILabel!
+    @IBOutlet weak var itemDescription: UITextView!
     
     @IBOutlet weak var sellerName: UILabel!
     

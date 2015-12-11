@@ -576,13 +576,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STt-Ir-HIG">
-                                <rect key="frame" x="20" y="442" width="418" height="81"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seller:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z69-n8-Xty">
                                 <rect key="frame" x="20" y="390" width="48" height="21"/>
                                 <animations/>
@@ -608,13 +601,19 @@
                                     <color key="titleColor" red="0.9561829229797979" green="0.57136200318377639" blue="0.18281672356378489" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8UH-Pb-Eso">
+                                <rect key="frame" x="20" y="423" width="560" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="currentImage" destination="OCW-hx-z5j" id="xxM-FD-GeO"/>
-                        <outlet property="itemDescription" destination="STt-Ir-HIG" id="X59-AD-ao7"/>
+                        <outlet property="itemDescription" destination="8UH-Pb-Eso" id="Cyo-Ud-VIF"/>
                         <outlet property="itemName" destination="fYn-Po-WHD" id="Cap-og-l89"/>
                         <outlet property="price" destination="NRw-Hr-L56" id="pfa-eu-aKH"/>
                         <outlet property="sellerName" destination="rQs-qm-gte" id="HZs-Fi-jBE"/>
