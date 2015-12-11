@@ -34,6 +34,9 @@ class single: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Undeitable
+        itemDescription.editable = false
+        
         // Show the navigation bar and lock it
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.hidesBarsOnSwipe = false
