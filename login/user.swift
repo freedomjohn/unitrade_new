@@ -98,6 +98,9 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         let imageData = try newImage.getData()
         let finalizedImage = UIImage(data: imageData)
         cell.imgCell.image = finalizedImage
+        cell.imgCell.clipsToBounds = true
+        cell.imgCell.layer.cornerRadius = 15
+
         }catch{
             print("error")
         }

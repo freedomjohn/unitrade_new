@@ -42,6 +42,9 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
                     if(error == nil){
                         let cimage = UIImage(data:imageData!)
                         self.myImgView.image = cimage
+                        self.myImgView.clipsToBounds = true
+                        self.myImgView.layer.cornerRadius = 15
+
                     }
                 })
             } else {

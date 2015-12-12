@@ -299,7 +299,7 @@
 				TargetAttributes = {
 					3A9C1F3A1BF5497F00666FFB = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 5WXF45432E;
+						DevelopmentTeam = J3ALTV5674;
 					};
 					3A9C1F4E1BF5497F00666FFB = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -572,7 +572,7 @@
 				);
 				INFOPLIST_FILE = login/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShengZhang.UniTrade;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianghao.UniTrade;
 				PRODUCT_NAME = UniTrade;
 				PROVISIONING_PROFILE = "";
 			};
@@ -591,7 +591,7 @@
 				);
 				INFOPLIST_FILE = login/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShengZhang.UniTrade;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianghao.UniTrade;
 				PRODUCT_NAME = UniTrade;
 				PROVISIONING_PROFILE = "";
 			};

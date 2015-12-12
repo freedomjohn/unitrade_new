@@ -77,6 +77,9 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
                     if(error == nil){
                         let cimage = UIImage(data:imageData!)
                         self.currentImage.image = cimage
+                        self.currentImage.clipsToBounds = true
+                        self.currentImage.layer.cornerRadius = 15
+
                     }
                 })
                 
