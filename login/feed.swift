@@ -155,7 +155,12 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
             // Bold the title name
             cell.titlename.font = UIFont.boldSystemFontOfSize(17.0)
             
-            cell.des.text = "$\(imagePrice)"
+            if(Int(imagePrice) == 0){
+                cell.des.text = "Free!"
+            }
+            else{
+             cell.des.text = "$\(imagePrice)"
+            }
             cell.des.textColor = UIColor.orangeColor()
             cell.imagedis.image = finalizedImage
             
