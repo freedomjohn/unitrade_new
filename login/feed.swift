@@ -181,12 +181,17 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         logInlogoTitle.text = "UniTrade"
         self.logInController.logInView?.logo = logInlogoTitle
         self.logInController.delegate = self
+        let logoView = UIImageView(image: UIImage(named: "IMG_4107.jpg"))
+        let logoView2 = UIImageView(image: UIImage(named: "IMG_4107.jpg"))
+        self.logInController.logInView?.addSubview(logoView)
+        self.logInController.logInView?.sendSubviewToBack(logoView)
         
         let signUplogoTitle = UILabel()
         signUplogoTitle.text = "UniTrade"
         self.signUpViewController.signUpView?.logo = signUplogoTitle
         self.signUpViewController.delegate = self
-        
+        self.signUpViewController.signUpView?.addSubview(logoView2)
+        self.signUpViewController.signUpView?.sendSubviewToBack(logoView2)
         self.logInController.signUpController = self.signUpViewController
         
         if(PFUser.currentUser() == nil){
