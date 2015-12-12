@@ -61,7 +61,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         self.imageCaptions = [String]()
         self.imagePrice = [String]()
 
-        var query = PFQuery(className: "Post")
+        let query = PFQuery(className: "Post")
         query.orderByDescending("createdAt")
         query.limit = 50
         var postArray : [PFObject]
