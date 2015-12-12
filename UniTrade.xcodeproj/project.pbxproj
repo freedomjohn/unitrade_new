@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3201B05D1C1CCDEE00318034 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3201B05C1C1CCDEE00318034 /* MessageUI.framework */; };
 		3231DDA71BF58F920090FC80 /* post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3231DDA61BF58F920090FC80 /* post.swift */; };
 		324C35BB1BF5A82900AC7BB8 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324C35BA1BF5A82900AC7BB8 /* user.swift */; };
 		324C35BD1BF68C1900AC7BB8 /* filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324C35BC1BF68C1900AC7BB8 /* filter.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3201B05C1C1CCDEE00318034 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3231DDA61BF58F920090FC80 /* post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = post.swift; sourceTree = "<group>"; };
 		324C35BA1BF5A82900AC7BB8 /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		324C35BC1BF68C1900AC7BB8 /* filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = filter.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3201B05D1C1CCDEE00318034 /* MessageUI.framework in Frameworks */,
 				3A9C1F851BF54B9200666FFB /* libsqlite3.tbd in Frameworks */,
 				3A9C1F831BF54B8700666FFB /* libz.tbd in Frameworks */,
 				3A9C1F811BF54B7B00666FFB /* SystemConfiguration.framework in Frameworks */,
@@ -139,6 +142,7 @@
 		0808FED31F2926412BE21D35 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3201B05C1C1CCDEE00318034 /* MessageUI.framework */,
 				FDD234E565AFD5BA0D6E6C7B /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -299,7 +303,7 @@
 				TargetAttributes = {
 					3A9C1F3A1BF5497F00666FFB = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = J3ALTV5674;
+						DevelopmentTeam = K9VM23QS3K;
 					};
 					3A9C1F4E1BF5497F00666FFB = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -572,7 +576,7 @@
 				);
 				INFOPLIST_FILE = login/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jianghao.UniTrade;
+				PRODUCT_BUNDLE_IDENTIFIER = com.EllisMin.UniTrade;
 				PRODUCT_NAME = UniTrade;
 				PROVISIONING_PROFILE = "";
 			};
@@ -591,7 +595,7 @@
 				);
 				INFOPLIST_FILE = login/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jianghao.UniTrade;
+				PRODUCT_BUNDLE_IDENTIFIER = com.EllisMin.UniTrade;
 				PRODUCT_NAME = UniTrade;
 				PROVISIONING_PROFILE = "";
 			};
