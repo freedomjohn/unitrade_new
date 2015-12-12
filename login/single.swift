@@ -61,8 +61,9 @@ class single: UIViewController{
                 self.itemName.font = UIFont.boldSystemFontOfSize(17.0)
                 //                self.category.text = post?.objectForKey("category") as? String
                 //Customize price label
-                let priceString = post?.objectForKey("price")! as? String
-                self.price.text = "$\(priceString!)"
+                let itemprice = post?.objectForKey("price") as! Int
+                let priceString = String(itemprice)
+                self.price.text = "$\(priceString)"
                 self.price.textColor = UIColor.orangeColor()
                 self.price.font = UIFont(name: "HelveticaNeue", size: CGFloat(20))
                 

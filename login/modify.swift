@@ -36,7 +36,8 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
             if error == nil && post != nil {
                 self.itemName.text = post?.objectForKey("name") as? String
                 //self.category.text = post?.objectForKey("category") as? String
-                self.itemPrice.text = post?.objectForKey("price") as? String
+                let itemprice = post?.objectForKey("price") as! Int
+                self.itemPrice.text = String(itemprice)
                 self.itemDescription.text = post?.objectForKey("description") as? String
                 let newImage = post?.objectForKey("image") as! PFFile
                 newImage.getDataInBackgroundWithBlock({
@@ -112,7 +113,7 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
                 let imageFile = PFFile(name:"image.jpeg", data:imageData!)
                 post!["image"] = imageFile
                 post!["name"] = self.itemName.text
-                post!["price"] = self.itemPrice.text
+                post!["price"] = Int(self.itemPrice.text!)
                 post!["description"] = self.itemDescription.text
                 //post["category"] = selectCategory.text
                 //post!["user"] = PFUser.currentUser()?.objectId

@@ -209,13 +209,13 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
             let imageData = UIImageJPEGRepresentation(currentImage.image!, 0.01)
             let imageFile = PFFile(name:"image.jpeg", data:imageData!)
             
-            let userPhoto = PFObject(className:"UserPhoto")
-            userPhoto["imageName"] = "\(i)"
-            userPhoto["imageFile"] = imageFile
-            userPhoto.saveInBackground()
+            //let userPhoto = PFObject(className:"UserPhoto")
+            //userPhoto["imageName"] = "\(i)"
+            //userPhoto["imageFile"] = imageFile
+            //userPhoto.saveInBackground()
             post["image"] = imageFile
             post["name"] = itemName.text
-            post["price"] = Price.text
+            post["price"] = Int(Price.text!)
             post["description"] = itemDescription.text
             post["category"] = selectCategory.text
             post["user"] = PFUser.currentUser()?.objectId

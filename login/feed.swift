@@ -99,7 +99,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
             for post in postArray {
                 self.images.append(post["image"] as! PFFile)
                 self.imageCaptions.append(post["name"] as! String)
-                self.imagePrice.append(post["price"] as! String)
+                self.imagePrice.append(String(post["price"]))
                 
             }
         }
