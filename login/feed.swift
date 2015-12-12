@@ -223,7 +223,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     @IBOutlet weak var user: UILabel!
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
-        
+        if(segue.identifier == "decell"){
         let indexPath : NSIndexPath = self.tableView.indexPathForSelectedRow!
         
         let DestViewController = segue.destinationViewController as! single
@@ -231,7 +231,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         let pass = passArray[indexPath.row]
         
         DestViewController.objectId = pass.objectId!
-        
+        }
     }
     /*
     // Override to support conditional editing of the table view.

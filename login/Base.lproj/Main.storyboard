@@ -517,7 +517,7 @@
                                     <outlet property="des" destination="1aC-ow-nJo" id="ACW-Lk-bTi"/>
                                     <outlet property="imagedis" destination="KJf-3q-BY2" id="ePY-Zv-YvM"/>
                                     <outlet property="titlename" destination="QpD-d7-hzk" id="c1y-vr-Wqz"/>
-                                    <segue destination="3wx-lh-fyp" kind="show" id="ABH-Lw-CW0"/>
+                                    <segue destination="3wx-lh-fyp" kind="show" identifier="decell" id="ABH-Lw-CW0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
