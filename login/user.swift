@@ -10,10 +10,13 @@ import UIKit
 import Parse
 import ParseUI
 
-class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
-    
+class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate{
+    let imagecrop = ImageUtil()
     var passArray = [PFObject]()
     var images = [PFFile]()
+    let imagePicker: UIImagePickerController! = UIImagePickerController()
+    
+    @IBOutlet weak var userface: UIImageView!
     @IBOutlet weak var userID: UILabel!
     @IBOutlet weak var numPosts: UILabel!
     
@@ -98,12 +101,66 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         let imageData = try newImage.getData()
         let finalizedImage = UIImage(data: imageData)
         cell.imgCell.image = finalizedImage
+        cell.imgCell.clipsToBounds = true
+        cell.imgCell.layer.cornerRadius = 15
+
         }catch{
             print("error")
         }
         
         return cell
     }
+    
+    @IBAction func takePicture(sender: AnyObject) {
+        let imageFromSource = UIImagePickerController()
+        imageFromSource.delegate = self
+        imageFromSource.allowsEditing = false
+        //create alert controller
+        let myAlert = UIAlertController(title: "take photo", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet )
+        
+        //Create and add the Cancel action
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+            //Just dismiss the action sheet
+        }
+        myAlert.addAction(cancelAction)
+        //Create and add first option action
+        let takePictureAction: UIAlertAction = UIAlertAction(title: "Take Picture using camera", style: .Default) { action -> Void in
+            //Code for launching the camera
+            if
+                UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+                    imageFromSource.sourceType = UIImagePickerControllerSourceType.Camera
+            }
+            else{
+                imageFromSource.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            }
+            self.presentViewController(imageFromSource, animated: true, completion: nil)
+            
+        }
+        myAlert.addAction(takePictureAction)
+        //Create and add a second option action
+        let choosePictureAction: UIAlertAction = UIAlertAction(title: "Choose From Camera Roll", style: .Default) { action -> Void in
+            //Code for picking from camera roll
+            imageFromSource.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.presentViewController(imageFromSource, animated: true, completion: nil)
+        }
+        myAlert.addAction(choosePictureAction)
+        
+        //show the alert
+        self.presentViewController(myAlert, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let temp : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let croppedImage: UIImage = imagecrop.cropToSquare(image: temp )
+        userface.image = croppedImage
+        userface.layer.cornerRadius = 15
+        self.dismissViewControllerAnimated( true , completion: {})
+    }
+
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var indexPaths = self.myCollectionView.indexPathsForSelectedItems()
