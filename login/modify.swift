@@ -22,6 +22,16 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
     
     var postID  = String()
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
