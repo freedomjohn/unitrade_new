@@ -54,7 +54,7 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
     }
     
     @IBAction func takePicture(sender: AnyObject) {
-        var imageFromSource = UIImagePickerController()
+        let imageFromSource = UIImagePickerController()
         imageFromSource.delegate = self
         imageFromSource.allowsEditing = false
         //create alert controller
@@ -95,7 +95,7 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        var temp : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let temp : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         myImgView.image = temp
         self.dismissViewControllerAnimated( true , completion: {})

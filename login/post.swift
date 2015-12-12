@@ -126,7 +126,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     @IBOutlet weak var postBtn: UITabBarItem!
     
     @IBAction func takePicture(sender: AnyObject) {
-        var imageFromSource = UIImagePickerController()
+        let imageFromSource = UIImagePickerController()
         imageFromSource.delegate = self
         imageFromSource.allowsEditing = false
         //create alert controller
@@ -171,7 +171,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        var temp : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let temp : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let croppedImage: UIImage = imagecrop.cropToSquare(image: temp )
         currentImage.image = croppedImage
         self.dismissViewControllerAnimated( true , completion: {})
@@ -189,12 +189,12 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
             self.presentViewController(myAlert, animated: true, completion: nil)
         }
         else {
-            var post = PFObject(className: "Post")
+            let post = PFObject(className: "Post")
 
             let imageData = UIImageJPEGRepresentation(currentImage.image!, 0.01)
             let imageFile = PFFile(name:"image.jpeg", data:imageData!)
             
-            var userPhoto = PFObject(className:"UserPhoto")
+            let userPhoto = PFObject(className:"UserPhoto")
             userPhoto["imageName"] = "\(i)"
             userPhoto["imageFile"] = imageFile
             userPhoto.saveInBackground()

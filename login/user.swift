@@ -13,6 +13,7 @@ import ParseUI
 class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
     var passArray = [PFObject]()
+    var images = [PFFile]()
     @IBOutlet weak var userID: UILabel!
     @IBOutlet weak var numPosts: UILabel!
     
@@ -26,7 +27,7 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        myCollectionView.reloadData()
+        loadData()
         var numPost = 0
         do {
             let query = PFQuery(className: "Post")
@@ -59,6 +60,26 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+    func loadData(){
+        self.images = [PFFile]()
+        
+        var postArray = [PFObject]()
+        let query = PFQuery(className: "Post")
+        query.orderByAscending("createdAt")
+        query.whereKey("user", equalTo: (PFUser.currentUser()?.objectId)!)
+        // Do any additional setup after loading the view.
+        do{
+            postArray = try query.findObjects()
+            passArray = postArray
+            for post in postArray{
+                self.images.append(post["image"] as! PFFile)
+            }
+        }catch{
+            print("error")
+        }
+        self.myCollectionView.reloadData()
+    }
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var retVal = 0
         do {
@@ -73,21 +94,9 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        var postArray = [PFObject]()
         let cell: colvwCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! colvwCell
-        let query = PFQuery(className: "Post")
-        query.orderByAscending("createdAt")
-        query.whereKey("user", equalTo: (PFUser.currentUser()?.objectId)!)
-        // Do any additional setup after loading the view.
-        do{
-            postArray = try query.findObjects()
-            passArray = postArray
-        }catch{
-            print("error")
-        }
-        let newPost = postArray[indexPath.row]
-        let newImage = newPost.objectForKey("image") as! PFFile
         
+        let newImage = self.images[indexPath.row] as PFFile
         do{
         let imageData = try newImage.getData()
         let finalizedImage = UIImage(data: imageData)
