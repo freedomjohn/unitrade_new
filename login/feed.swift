@@ -158,8 +158,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
             cell.des.text = "$\(imagePrice)"
             cell.des.textColor = UIColor.orangeColor()
             cell.imagedis.image = finalizedImage
-            cell.imagedis.clipsToBounds = true
-            cell.imagedis.layer.cornerRadius = 25
+            
 
         }
         catch {
