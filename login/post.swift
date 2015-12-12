@@ -69,11 +69,11 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     
     // for description
     func textViewDidBeginEditing(textView: UITextView) {
-        if textView.textColor == UIColor.lightGrayColor() {
             textView.text = nil
             textView.textColor = UIColor.whiteColor()
-        }
+        
     }
+    
     func textViewDidEndEditing(textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "Write a short description"
@@ -91,8 +91,8 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         
         // itemDescription place holder
         itemDescription.text = "Write a short description"
+        itemDescription.textColor = UIColor.lightGrayColor()
         itemDescription.backgroundColor = UIColor.grayColor()
-        itemDescription.textColor = UIColor.whiteColor()
         itemDescription.delegate? = self
         
         
