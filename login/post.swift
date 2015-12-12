@@ -203,6 +203,14 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
             myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
             self.presentViewController(myAlert, animated: true, completion: nil)
         }
+            // Setting the price range
+        else if (Int(Price.text!) < 0 || Int(Price.text!) > 100000){
+            let myAlert = UIAlertController(title: "Price must be between $0 - $100,000", message: nil, preferredStyle: UIAlertControllerStyle.Alert )
+            //add an "ok" button
+            myAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+            self.presentViewController(myAlert, animated: true, completion: nil)
+        }
+            
         else {
             let post = PFObject(className: "Post")
 

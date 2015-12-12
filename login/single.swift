@@ -32,8 +32,9 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
 //    var userID = String()
 
     override func viewDidDisappear(animated: Bool) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+//        navigationController?.popToRootViewControllerAnimated(true)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -122,14 +123,15 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
         } else {
             self.showSendMailErrorAlert()
         }
+//        navigationController?.popViewControllerAnimated(true)//
     }
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
         
         mailComposerVC.setToRecipients(["dbmin@hotmail.com"])
-        mailComposerVC.setSubject("Interest abouot your product - UniTrade")
-        mailComposerVC.setMessageBody("Sending e-mail from UniTrade", isHTML: false)
+        mailComposerVC.setSubject("Interest about \(itemName.text!)")
+        mailComposerVC.setMessageBody("", isHTML: false)
         
         return mailComposerVC
     }
@@ -142,15 +144,16 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
     // MARK: MFMailComposeViewControllerDelegate
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        switch result {
-        case MFMailComposeResultCancelled:
-            print("cancelled mail")
-        case MFMailComposeResultSent:
-            print("mail sent")
-        default:
-            break
-        }
+//        switch result {
+//        case MFMailComposeResultCancelled:
+//            print("cancelled mail")
+//        case MFMailComposeResultSent:
+//            print("mail sent")
+//        default:
+//            break
+//        }
         controller.dismissViewControllerAnimated(true, completion: nil)
+        
         
     }
 
