@@ -30,7 +30,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectCategory.text = category[row]
-        selectCategory.textColor = UIColor.grayColor()
+        selectCategory.textColor = UIColor.whiteColor()
         picker.hidden = true
     }
 
@@ -69,11 +69,11 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     
     // for description
     func textViewDidBeginEditing(textView: UITextView) {
-        if textView.textColor == UIColor.lightGrayColor() {
             textView.text = nil
             textView.textColor = UIColor.whiteColor()
-        }
+        
     }
+    
     func textViewDidEndEditing(textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "Write a short description"
@@ -92,38 +92,46 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         // itemDescription place holder
         itemDescription.text = "Write a short description"
         itemDescription.textColor = UIColor.lightGrayColor()
+        itemDescription.backgroundColor = UIColor.grayColor()
         itemDescription.delegate? = self
         
         
         //pictureBtn styling
         pictureBtn.layer.cornerRadius = 5
-        
+        print(pictureBtn.backgroundColor)
         //itemName
-        itemName.layer.borderColor = UIColor.grayColor().CGColor
-        itemName.layer.borderWidth = 1.75
+        itemName.backgroundColor = UIColor.grayColor()
+        itemName.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
+        itemName.layer.borderWidth = 0.75
         itemName.layer.cornerRadius = 5
         //Price styling
-        Price.layer.borderColor = UIColor.redColor().CGColor
-        Price.layer.borderWidth = 1.75
+        Price.backgroundColor = UIColor.grayColor()
+        Price.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
+        Price.layer.borderWidth = 0.75
         Price.layer.cornerRadius = 5
         
         //itemDescription styling
-//        itemDescription.layer.cornerRadius = 5.0
-        itemDescription.layer.borderWidth = 1.75
-        itemDescription.layer.borderColor = UIColor.redColor().CGColor
+        itemDescription.layer.borderWidth = 0.75
+        itemDescription.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
         itemDescription.layer.cornerRadius = 5
         
         //for picker
         picker.delegate = self //category picker
         picker.dataSource = self
         picker.hidden = true
+        
         picker.layer.cornerRadius = 15
-        selectCategory.textColor = UIColor.grayColor()
+        
         // Do any additional setup after loading the view.
         
         //for current image view
         currentImage.clipsToBounds = true
         currentImage.layer.cornerRadius = 15
+        
+        selectCategory.clipsToBounds = true
+        selectCategory.backgroundColor = UIColor.grayColor()
+        selectCategory.textColor = UIColor.whiteColor()
+        selectCategory.layer.cornerRadius = 5
     }
     
     override func didReceiveMemoryWarning() {
