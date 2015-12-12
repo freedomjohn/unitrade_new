@@ -551,7 +551,6 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
@@ -713,24 +712,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kQ-Pa-e8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="567" y="-1418"/>
-        </scene>
-        <!--Email-->
-        <scene sceneID="msb-BG-dEO">
-            <objects>
-                <viewController id="zKD-t2-MK7" customClass="email" customModule="UniTrade" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eDe-IB-wnY"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZSz-ZZ-QSp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4Dr-ne-oNv">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gpy-Rl-nmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1278" y="-1418"/>
         </scene>
         <!--Feed-->
         <scene sceneID="CBW-Vr-tl9">
