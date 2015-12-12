@@ -257,7 +257,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="25" y="86.5" width="179" height="159.5"/>
+                                    <rect key="frame" x="20" y="79" width="179" height="159.5"/>
                                     <mask key="constraints">
                                         <include reference="7MO-wd-H9d"/>
                                     </mask>
