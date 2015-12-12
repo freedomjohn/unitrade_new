@@ -55,6 +55,8 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     
+
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
@@ -81,6 +83,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         imagePicker.delegate = self
         // Edit item name first
 //        itemName.becomeFirstResponder()
@@ -94,13 +97,18 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         //pictureBtn styling
         pictureBtn.layer.cornerRadius = 5
         
+        //itemName
+        itemName.layer.borderColor = UIColor.redColor().CGColor
+        itemName.layer.borderWidth = 1.75
+        
+        //Price styling
+        Price.layer.borderColor = UIColor.redColor().CGColor
+        Price.layer.borderWidth = 1.75
+        
         //itemDescription styling
-        itemDescription.layer.cornerRadius = 5.0
-        itemDescription.layer.borderWidth = 1.75
-        itemDescription.layer.borderColor = UIColor.lightGrayColor().CGColor
 //        itemDescription.layer.cornerRadius = 5.0
-//        itemDescription.layer.borderColor = UIColor.lightGrayColor().CGColor
-//        itemDescription.layer.borderWidth = 1.75
+        itemDescription.layer.borderWidth = 1.75
+        itemDescription.layer.borderColor = UIColor.redColor().CGColor
         
         //for picker
         picker.delegate = self //category picker
