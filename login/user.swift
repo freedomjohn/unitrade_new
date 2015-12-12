@@ -44,7 +44,8 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        userface.clipsToBounds = true
+        userface.layer.cornerRadius = 80
         
         do {
             let query = PFQuery(className: "Post")
@@ -156,8 +157,10 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         let temp : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let croppedImage: UIImage = imagecrop.cropToSquare(image: temp )
         userface.image = croppedImage
-        userface.layer.cornerRadius = 15
+        userface.clipsToBounds = true
+        userface.layer.cornerRadius = 100
         self.dismissViewControllerAnimated( true , completion: {})
+        
     }
 
     
