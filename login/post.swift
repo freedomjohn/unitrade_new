@@ -17,7 +17,8 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var selectCategory: UILabel!
-    var category = ["Electronics", "Movies, Books and Music", "Fashion and Accessories"]
+    var category = ["Electronics","Cars and Motors", "Sports and Leisure",
+        "Games and Consoles", "Movies, Books and Music", "Fashion and Accessories", "Other"]
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return category[row]
     }
@@ -100,20 +101,23 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         //itemName
         itemName.layer.borderColor = UIColor.redColor().CGColor
         itemName.layer.borderWidth = 1.75
-        
+        itemName.layer.cornerRadius = 5
         //Price styling
         Price.layer.borderColor = UIColor.redColor().CGColor
         Price.layer.borderWidth = 1.75
+        Price.layer.cornerRadius = 5
         
         //itemDescription styling
 //        itemDescription.layer.cornerRadius = 5.0
         itemDescription.layer.borderWidth = 1.75
         itemDescription.layer.borderColor = UIColor.redColor().CGColor
+        itemDescription.layer.cornerRadius = 5
         
         //for picker
         picker.delegate = self //category picker
         picker.dataSource = self
         picker.hidden = true
+        picker.layer.cornerRadius = 15
         selectCategory.textColor = UIColor.lightGrayColor()
         // Do any additional setup after loading the view.
     }
