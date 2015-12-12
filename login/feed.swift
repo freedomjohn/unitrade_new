@@ -18,7 +18,10 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     var logInController = PFLogInViewController()
     var signUpViewController = PFSignUpViewController()
     var passArray = [PFObject]()
-    
+    var filterPrice = String()
+    var filterCate = String()
+    var low = Int()
+    var high = Int()
     
     var images = [PFFile]()
     var imageCaptions = [String]()
@@ -35,7 +38,8 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         super.viewWillAppear(animated)
 
         loadData()
-        
+        print(filterCate)
+        print(filterPrice)
     }
     
     
@@ -60,8 +64,32 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         self.images = [PFFile]()
         self.imageCaptions = [String]()
         self.imagePrice = [String]()
-
+        
+        if(filterPrice == "$0 - $10"){
+            low = 0
+            high = 10
+        }else if(filterPrice == "$10 - $50"){
+            low = 10
+            high = 50
+        }else if(filterPrice == "$50 - $100"){
+            low = 50
+            high = 100
+        }else if(filterPrice == "$100 and higher"){
+            low = 100
+            high = 100000
+        }
+        
+        
         let query = PFQuery(className: "Post")
+        
+        if(filterCate != ""){
+            query.whereKey("category", equalTo: filterCate)
+        }
+        if(filterPrice != ""){
+            query.whereKey("price", greaterThanOrEqualTo: low)
+            query.whereKey("price", lessThanOrEqualTo: high)
+        }
+        
         query.orderByDescending("createdAt")
         query.limit = 50
         var postArray : [PFObject]
@@ -96,7 +124,16 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var retVal = 0
         do {
-            retVal = try PFQuery(className:"Post").findObjects().count
+            let query = PFQuery(className: "Post")
+            
+            if(filterCate != ""){
+                query.whereKey("category", equalTo: filterCate)
+            }
+            if(filterPrice != ""){
+                query.whereKey("price", greaterThanOrEqualTo: low)
+                query.whereKey("price", lessThanOrEqualTo: high)
+            }
+            retVal = try query.findObjects().count
         } catch {
             print("error2")
         }

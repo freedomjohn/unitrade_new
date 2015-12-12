@@ -13,9 +13,11 @@ class ViewController: UITableViewController{
     //var location = ["within 0.5 miles", "within 1 miles", "within 5 miles"]
     var category = ["Electronics","Cars and Motors", "Sports and Leisure",
         "Games and Consoles", "Movies, Books and Music", "Fashion and Accessories", "Other"]
-    var price = ["$0 - $10", "$10 - $50", "$50 - $100"]
+    var price = ["$0 - $10", "$10 - $50", "$50 - $100", "$100 and higher"]
     var path = NSIndexPath?()
     var path2 = NSIndexPath?()
+    var chosenPrice = String()
+    var chosenCate = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +92,21 @@ class ViewController: UITableViewController{
         }else if (cell?.accessoryType == UITableViewCellAccessoryType.Checkmark){
             cell?.accessoryType = UITableViewCellAccessoryType.None
         }
+        if(indexPath.section == 0){
+            chosenCate = (cell?.textLabel?.text)!
+        }else if(indexPath.section == 1){
+            chosenPrice = (cell?.textLabel?.text)!
+        }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let barVC = segue.destinationViewController as! UITabBarController
+        let navVC = barVC.viewControllers?.first as! UINavigationController
+        let DestViewController = navVC.viewControllers.first as! feed
+        
+        DestViewController.filterPrice = chosenPrice
+        DestViewController.filterCate = chosenCate
+    }
+    
 }
 

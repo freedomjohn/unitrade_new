@@ -24,7 +24,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CfY-Yt-cW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1258" y="-668"/>
+            <point key="canvasLocation" x="-1652" y="-668"/>
         </scene>
         <!--Create a post-->
         <scene sceneID="wZH-f3-8hT">
@@ -148,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ac9-oe-YbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="300" y="-528"/>
+            <point key="canvasLocation" x="644" y="-668"/>
         </scene>
         <!--User-->
         <scene sceneID="nFM-Aq-qHJ">
@@ -231,7 +231,7 @@
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="0.0" y="315" width="400" height="236"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="0.0" y="515" width="400" height="236"/>
                                 </variation>
                                 <connections>
@@ -575,14 +575,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Filter" id="Wy3-ZX-sk1">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="dcz-Hc-h2F">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="gvH-Uz-1ef">
                             <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="Prs-JL-fFe" kind="show" id="rke-sm-AeJ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtB-d5-Go3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="567" y="-2089"/>
+            <point key="canvasLocation" x="-57" y="-2124"/>
         </scene>
         <!--Post-->
         <scene sceneID="1si-Sd-trd">
@@ -686,7 +689,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ej-On-ahC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-858" y="-1418"/>
+            <point key="canvasLocation" x="-842" y="-1418"/>
         </scene>
         <!--Post-->
         <scene sceneID="kyt-ML-caI">
@@ -705,7 +708,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZ5-kA-Aj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-406" y="-520"/>
+            <point key="canvasLocation" x="-390" y="-668"/>
         </scene>
         <!--User-->
         <scene sceneID="RKu-LX-HN0">
@@ -734,4 +737,7 @@
         <image name="post icon copy" width="40" height="40"/>
         <image name="user_male2-512" width="40" height="40"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="rke-sm-AeJ"/>
+    </inferredMetricsTieBreakers>
 </document>
