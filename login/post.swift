@@ -30,7 +30,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectCategory.text = category[row]
-        selectCategory.textColor = UIColor.blackColor()
+        selectCategory.textColor = UIColor.grayColor()
         picker.hidden = true
     }
 
@@ -118,7 +118,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         picker.dataSource = self
         picker.hidden = true
         picker.layer.cornerRadius = 15
-        selectCategory.textColor = UIColor.lightGrayColor()
+        selectCategory.textColor = UIColor.grayColor()
         // Do any additional setup after loading the view.
     }
     
