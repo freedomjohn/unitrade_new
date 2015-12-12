@@ -549,13 +549,18 @@
         <!--Filter-->
         <scene sceneID="xpV-Ut-FZ5">
             <objects>
-                <tableViewController id="Aom-zI-PzV" sceneMemberID="viewController">
+                <tableViewController id="Aom-zI-PzV" customClass="ViewController" customModule="UniTrade" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="HwP-ii-a6I">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rBt-yt-idJ">
+                            <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Detele Filter"/>
+                        </button>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="154-tC-KCL">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="filter Cell" id="154-tC-KCL">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="154-tC-KCL" id="nD6-Y4-m1o">
@@ -569,7 +574,11 @@
                             <outlet property="delegate" destination="Aom-zI-PzV" id="Bme-qX-r5V"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Filter" id="Wy3-ZX-sk1"/>
+                    <navigationItem key="navigationItem" title="Filter" id="Wy3-ZX-sk1">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="dcz-Hc-h2F">
+                            <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtB-d5-Go3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
