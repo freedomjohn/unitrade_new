@@ -195,7 +195,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     
     @IBAction func addPost(sender: AnyObject) {
         //var post = PFObject(className: "Post")
-        if (itemName.text == "" || Price.text == "" || itemDescription.text == "" || checkPhoto == false || selectCategory.text == "Select a category") {
+        if (itemName.text == "" || Price.text == "" || itemDescription.text == "" || checkPhoto == false || selectCategory.text == "Select a category" || itemDescription.text == "Write a short description") {
             
             // Showing popup alert
             let myAlert = UIAlertController(title: "Please complete all of the required fields before continuing.", message: nil, preferredStyle: UIAlertControllerStyle.Alert )

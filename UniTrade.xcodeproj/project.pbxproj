@@ -11,7 +11,6 @@
 		324C35BB1BF5A82900AC7BB8 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324C35BA1BF5A82900AC7BB8 /* user.swift */; };
 		324C35BD1BF68C1900AC7BB8 /* filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324C35BC1BF68C1900AC7BB8 /* filter.swift */; };
 		324C4D741BF58D890061E3A6 /* Supporting File in Resources */ = {isa = PBXBuildFile; fileRef = 324C4D731BF58D890061E3A6 /* Supporting File */; };
-		3261A7011C16D78800F547F2 /* email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3261A7001C16D78800F547F2 /* email.swift */; };
 		3261A7051C16F0EE00F547F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3261A7041C16F0EE00F547F2 /* Assets.xcassets */; };
 		32A3967F1C045EF0003B3D95 /* feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A3967E1C045EF0003B3D95 /* feed.swift */; };
 		3A2796461C14E95E004B1C5B /* single.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2796451C14E95E004B1C5B /* single.swift */; };
@@ -62,7 +61,6 @@
 		324C35BA1BF5A82900AC7BB8 /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		324C35BC1BF68C1900AC7BB8 /* filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = filter.swift; sourceTree = "<group>"; };
 		324C4D731BF58D890061E3A6 /* Supporting File */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Supporting File"; sourceTree = "<group>"; };
-		3261A7001C16D78800F547F2 /* email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = email.swift; sourceTree = "<group>"; };
 		3261A7041C16F0EE00F547F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32A3967E1C045EF0003B3D95 /* feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = feed.swift; sourceTree = "<group>"; };
 		3A2796451C14E95E004B1C5B /* single.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = single.swift; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 				3A2796451C14E95E004B1C5B /* single.swift */,
 				3A2796471C14FB66004B1C5B /* colvwCell.swift */,
 				3ACF62451C1673BE00890494 /* modify.swift */,
-				3261A7001C16D78800F547F2 /* email.swift */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -415,7 +412,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3261A7011C16D78800F547F2 /* email.swift in Sources */,
 				324C35BB1BF5A82900AC7BB8 /* user.swift in Sources */,
 				32A3967F1C045EF0003B3D95 /* feed.swift in Sources */,
 				3231DDA71BF58F920090FC80 /* post.swift in Sources */,

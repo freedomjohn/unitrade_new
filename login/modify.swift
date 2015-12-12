@@ -13,7 +13,8 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
    
     @IBOutlet weak var itemName: UITextField!
     @IBOutlet weak var itemPrice: UITextField!
-    @IBOutlet weak var itemDescription: UITextField!
+    
+    @IBOutlet weak var itemDescription: UITextView!
     @IBOutlet weak var myImgView: UIImageView!
     
     let imagePicker: UIImagePickerController! = UIImagePickerController()
@@ -23,11 +24,7 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Changing color of price field
-        itemPrice.textColor = UIColor.orangeColor()
-        itemName.font = UIFont.boldSystemFontOfSize(17.0) // bold item name
-        
-        
+
         
         imagePicker.delegate = self
         let query = PFQuery(className:"Post")
@@ -52,6 +49,28 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
             }
         }
 
+        
+        
+        //itemName
+        itemName.font = UIFont.boldSystemFontOfSize(17.0) // bold item name
+        itemName.textColor = UIColor.whiteColor()
+        itemName.backgroundColor = UIColor.grayColor()
+        itemName.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
+        itemName.layer.borderWidth = 0.75
+        itemName.layer.cornerRadius = 5
+        //Price styling
+        itemPrice.textColor = UIColor.whiteColor()
+        itemPrice.backgroundColor = UIColor.grayColor()
+        itemPrice.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
+        itemPrice.layer.borderWidth = 0.75
+        itemPrice.layer.cornerRadius = 5
+        
+        // Description
+        itemDescription.textColor = UIColor.whiteColor()
+        itemDescription.backgroundColor = UIColor.grayColor()
+        itemDescription.layer.borderWidth = 0.75
+        itemDescription.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
+        itemDescription.layer.cornerRadius = 5
     }
     
     @IBAction func takePicture(sender: AnyObject) {
