@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MessageUI
 
-class email: ViewController,MFMailComposeViewControllerDelegate {
+class email: UIViewController,MFMailComposeViewControllerDelegate {
     
     @IBAction func sendEmailButtonTapped(sender: AnyObject) {
         let mailComposeViewController = configuredMailComposeViewController()
