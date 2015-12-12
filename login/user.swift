@@ -26,7 +26,7 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        userID.text = PFUser.currentUser()?.username
         loadData()
         var numPost = 0
         do {
@@ -41,17 +41,14 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        userID.text = PFUser.currentUser()?.username
         
-        var numPost = 0
+        
         do {
             let query = PFQuery(className: "Post")
             query.whereKey("user", equalTo: (PFUser.currentUser()?.objectId)!)
-            numPost = try query.findObjects().count
         } catch {
             print("error3")
         }
-        numPosts.text = String(numPost)
 
     }
     
