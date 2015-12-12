@@ -71,7 +71,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     func textViewDidBeginEditing(textView: UITextView) {
         if textView.textColor == UIColor.lightGrayColor() {
             textView.text = nil
-            textView.textColor = UIColor.blackColor()
+            textView.textColor = UIColor.whiteColor()
         }
     }
     func textViewDidEndEditing(textView: UITextView) {
@@ -99,7 +99,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         pictureBtn.layer.cornerRadius = 5
         
         //itemName
-        itemName.layer.borderColor = UIColor.redColor().CGColor
+        itemName.layer.borderColor = UIColor.grayColor().CGColor
         itemName.layer.borderWidth = 1.75
         itemName.layer.cornerRadius = 5
         //Price styling
@@ -120,6 +120,10 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         picker.layer.cornerRadius = 15
         selectCategory.textColor = UIColor.grayColor()
         // Do any additional setup after loading the view.
+        
+        //for current image view
+        currentImage.clipsToBounds = true
+        currentImage.layer.cornerRadius = 15
     }
     
     override func didReceiveMemoryWarning() {
@@ -168,8 +172,6 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         //show the alert
         self.presentViewController(myAlert, animated: true, completion: nil)
         
-        //imageFromSource.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        
     }
     
     
@@ -178,6 +180,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         let temp : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let croppedImage: UIImage = imagecrop.cropToSquare(image: temp )
         currentImage.image = croppedImage
+        currentImage.layer.cornerRadius = 15
         self.dismissViewControllerAnimated( true , completion: {})
     }
     

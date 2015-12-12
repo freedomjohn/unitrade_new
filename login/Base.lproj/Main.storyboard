@@ -71,10 +71,10 @@
                                     <outlet property="delegate" destination="OW8-aR-Oom" id="fDt-9C-kHp"/>
                                 </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="no_image-512" translatesAutoresizingMaskIntoConstraints="NO" id="nbS-rq-qNQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="no_image-512" translatesAutoresizingMaskIntoConstraints="NO" id="nbS-rq-qNQ">
                                 <rect key="frame" x="58" y="376" width="260" height="237"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="58" y="371" width="260" height="237"/>
+                                    <rect key="frame" x="78" y="371" width="220" height="220"/>
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3R-nR-qAr">
@@ -90,6 +90,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eee-hJ-01m">
                                 <rect key="frame" x="28" y="263" width="258" height="21"/>
+                                <color key="backgroundColor" red="0.52941176470588236" green="0.52941176470588236" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -97,6 +98,16 @@
                                     <rect key="frame" x="28" y="255" width="323" height="34"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XQ-Q0-cyp">
+                                <rect key="frame" x="20" y="256" width="245" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="28" y="257" width="331" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="selectCategoryBtn:" destination="OW8-aR-Oom" eventType="touchUpInside" id="oJr-XA-weA"/>
+                                </connections>
+                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a6o-oY-84U">
                                 <rect key="frame" x="25" y="158" width="326" height="100"/>
                                 <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -110,16 +121,6 @@
                                     <outlet property="delegate" destination="OW8-aR-Oom" id="CdW-wu-2a8"/>
                                 </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XQ-Q0-cyp">
-                                <rect key="frame" x="20" y="256" width="245" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="28" y="257" width="331" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="selectCategoryBtn:" destination="OW8-aR-Oom" eventType="touchUpInside" id="oJr-XA-weA"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.74901960784313726" green="0.92156862745098034" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
