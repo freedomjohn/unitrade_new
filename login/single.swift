@@ -130,8 +130,8 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
         
         mailComposerVC.setToRecipients(["dbmin@hotmail.com"])
-        mailComposerVC.setSubject("Interest abouot your product - UniTrade")
-        mailComposerVC.setMessageBody("Sending e-mail from UniTrade", isHTML: false)
+        mailComposerVC.setSubject("Interest about \(itemName.text!)")
+        mailComposerVC.setMessageBody("", isHTML: false)
         
         return mailComposerVC
     }
