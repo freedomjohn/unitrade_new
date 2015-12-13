@@ -40,10 +40,11 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         let userface = UIImageView(image: UIImage(named: "androidlogo.jpg"))
         let imageData = UIImageJPEGRepresentation(userface.image!, 0.01)
         let imageFile = PFFile(name:"image.jpeg", data:imageData!)
-        var currentuser = PFUser.currentUser()
-        currentuser!["portrait"] = imageFile
-        }
 */
+        //var currentuser = PFUser.currentUser()
+        //currentuser!["portrait"] = imageFile
+        //print(currentuser!.objectId)
+
         loadData()
     }
     
