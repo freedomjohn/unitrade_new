@@ -84,6 +84,11 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
         itemDescription.layer.borderWidth = 0.75
         itemDescription.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
         itemDescription.layer.cornerRadius = 5
+        
+        // Swipe function
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
     }
     
     @IBAction func takePicture(sender: AnyObject) {
@@ -183,5 +188,18 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
             }
         }
 
+    }
+    
+    // swipe to pop
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Right:
+                navigationController?.popViewControllerAnimated(true)
+            default:
+                break
+            }
+        }
     }
 }
