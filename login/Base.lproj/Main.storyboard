@@ -413,6 +413,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bu5-Uc-PUW">
                                 <rect key="frame" x="546" y="7" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.99714875709999995" green="0.95172953049999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
