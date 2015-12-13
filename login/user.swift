@@ -56,7 +56,7 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         userface.clipsToBounds = true
-        userface.layer.cornerRadius = 70
+        userface.layer.cornerRadius = 63
         
         do {
             let query = PFQuery(className: "Post")
@@ -173,7 +173,8 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         var currentuser = PFUser.currentUser()
         currentuser!["portrait"] = imageFile
         userface.clipsToBounds = true
-        userface.layer.cornerRadius = 90
+        userface.layer.cornerRadius = 63
+        currentuser?.saveInBackground()
         self.dismissViewControllerAnimated( true , completion: {})
         
     }

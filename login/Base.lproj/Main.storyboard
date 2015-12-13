@@ -907,7 +907,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="154-tC-KCL" id="nD6-Y4-m1o">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1027,7 +1027,7 @@
         <scene sceneID="CBW-Vr-tl9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="PJI-PO-0Ch" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" image="feed icon copy" id="HKg-xq-HCd"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="home copy" id="HKg-xq-HCd"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1L8-uV-UbM">
@@ -1047,7 +1047,7 @@
         <scene sceneID="kyt-ML-caI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A5M-15-XA6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Post" image="post icon copy" id="dDk-kn-WqN"/>
+                    <tabBarItem key="tabBarItem" title="Post" image="18-512 copy" id="dDk-kn-WqN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w7A-By-I50">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1083,10 +1083,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="feed icon copy" width="40" height="40"/>
+        <image name="18-512 copy" width="40" height="40"/>
+        <image name="home copy" width="33" height="33"/>
         <image name="no-image-icon-md" width="299" height="267"/>
         <image name="no_image-512" width="512" height="512"/>
-        <image name="post icon copy" width="40" height="40"/>
         <image name="user1 copy" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
