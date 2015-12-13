@@ -358,7 +358,7 @@
                                     <action selector="takePicture:" destination="Hmb-FO-ScU" eventType="touchUpInside" id="qyc-hT-x68"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaO-ZP-rji">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaO-ZP-rji">
                                 <rect key="frame" x="5" y="254" width="82" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.72534839527027029" colorSpace="calibratedRGB"/>
@@ -407,19 +407,19 @@
                                 <exclude reference="oKS-iw-w0O"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ANz-HK-Njg"/>
-                                <exclude reference="Nhi-WA-a0N"/>
                                 <exclude reference="2MT-X9-LeM"/>
                                 <exclude reference="jTb-Yd-VLa"/>
+                                <exclude reference="ANz-HK-Njg"/>
+                                <exclude reference="Nhi-WA-a0N"/>
+                                <exclude reference="Jvd-SK-MaV"/>
+                                <exclude reference="dg5-CF-Fva"/>
                                 <exclude reference="8Nx-4z-akK"/>
                                 <exclude reference="Qab-cT-CqI"/>
-                                <exclude reference="HyF-7Y-uv1"/>
-                                <exclude reference="Z7O-W1-kSc"/>
                                 <exclude reference="7a5-Ad-6A9"/>
                                 <exclude reference="gVc-Tc-RXB"/>
                                 <exclude reference="m2V-8D-VRh"/>
-                                <exclude reference="Jvd-SK-MaV"/>
-                                <exclude reference="dg5-CF-Fva"/>
+                                <exclude reference="HyF-7Y-uv1"/>
+                                <exclude reference="Z7O-W1-kSc"/>
                                 <exclude reference="Aw4-jk-cej"/>
                                 <exclude reference="iRE-YW-h5H"/>
                                 <exclude reference="1ph-2H-V9p"/>
@@ -431,29 +431,29 @@
                                 <include reference="oKS-iw-w0O"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="2MT-X9-LeM"/>
+                                <include reference="jTb-Yd-VLa"/>
                                 <include reference="ANz-HK-Njg"/>
                                 <exclude reference="EVR-ad-kbo"/>
                                 <include reference="Nhi-WA-a0N"/>
                                 <exclude reference="aIE-2T-nWJ"/>
-                                <include reference="2MT-X9-LeM"/>
-                                <include reference="jTb-Yd-VLa"/>
+                                <include reference="Jvd-SK-MaV"/>
+                                <include reference="dg5-CF-Fva"/>
                                 <include reference="8Nx-4z-akK"/>
                                 <exclude reference="PDW-po-30D"/>
                                 <include reference="Qab-cT-CqI"/>
                                 <exclude reference="l5Y-6y-d7U"/>
-                                <include reference="HyF-7Y-uv1"/>
-                                <exclude reference="Nd2-ev-yPA"/>
-                                <exclude reference="PLF-S1-e6h"/>
-                                <exclude reference="TET-dj-SbM"/>
-                                <include reference="Z7O-W1-kSc"/>
                                 <include reference="7a5-Ad-6A9"/>
                                 <exclude reference="Axq-ab-APZ"/>
                                 <exclude reference="ZHz-jC-uhv"/>
                                 <exclude reference="bG0-4o-dVB"/>
                                 <include reference="gVc-Tc-RXB"/>
                                 <include reference="m2V-8D-VRh"/>
-                                <include reference="Jvd-SK-MaV"/>
-                                <include reference="dg5-CF-Fva"/>
+                                <include reference="HyF-7Y-uv1"/>
+                                <exclude reference="Nd2-ev-yPA"/>
+                                <exclude reference="PLF-S1-e6h"/>
+                                <exclude reference="TET-dj-SbM"/>
+                                <include reference="Z7O-W1-kSc"/>
                                 <include reference="Aw4-jk-cej"/>
                                 <exclude reference="cHG-at-LhN"/>
                                 <include reference="iRE-YW-h5H"/>
@@ -1055,7 +1055,7 @@
         <scene sceneID="RKu-LX-HN0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZNF-Ls-CU7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="User" image="user1 copy.png" id="CdM-Me-HPN"/>
+                    <tabBarItem key="tabBarItem" title="User" image="user1 copy" id="CdM-Me-HPN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zOw-bj-vbD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1076,7 +1076,7 @@
         <image name="no-image-icon-md" width="299" height="267"/>
         <image name="no_image-512" width="512" height="512"/>
         <image name="post icon copy" width="40" height="40"/>
-        <image name="user1 copy.png" width="40" height="40"/>
+        <image name="user1 copy" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mm5-Fp-1m3"/>
