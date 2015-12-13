@@ -265,7 +265,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     }
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
         
-            let userface = UIImageView(image: UIImage(named: "user111.png"))
+            let userface = UIImageView(image: UIImage(named: "user icon.png"))
             let imageData = UIImageJPEGRepresentation(userface.image!, 0.01)
             let imageFile = PFFile(name:"image.jpeg", data:imageData!)
             var currentuser = PFUser.currentUser()
