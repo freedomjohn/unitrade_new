@@ -36,7 +36,14 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
+        /*if(PFUser.currentUser() != nil){
+        let userface = UIImageView(image: UIImage(named: "androidlogo.jpg"))
+        let imageData = UIImageJPEGRepresentation(userface.image!, 0.01)
+        let imageFile = PFFile(name:"image.jpeg", data:imageData!)
+        var currentuser = PFUser.currentUser()
+        currentuser!["portrait"] = imageFile
+        }
+*/
         loadData()
     }
     
@@ -153,7 +160,12 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
             // Bold the title name
             cell.titlename.font = UIFont.boldSystemFontOfSize(17.0)
             
-            cell.des.text = "$\(imagePrice)"
+            if(Int(imagePrice) == 0){
+                cell.des.text = "Free!"
+            }
+            else{
+             cell.des.text = "$\(imagePrice)"
+            }
             cell.des.textColor = UIColor.orangeColor()
             cell.imagedis.image = finalizedImage
             
@@ -231,6 +243,14 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         return true
     }
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+        /*
+            let userface = UIImageView(image: UIImage(named: "androidlogo.jpg"))
+            let imageData = UIImageJPEGRepresentation(userface.image!, 0.01)
+            let imageFile = PFFile(name:"image.jpeg", data:imageData!)
+            var currentuser = PFUser.currentUser()
+            currentuser!["portrait"] = imageFile
+*/
+              //  .addObject(imageFile!, forKey: "portrait")
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
