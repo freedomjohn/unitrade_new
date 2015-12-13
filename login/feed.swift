@@ -186,7 +186,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
             cell.des.textColor = UIColor(red:1.00, green:0.39, blue:0.41, alpha:1.0)
             cell.imagedis.image = finalizedImage
             cell.userIMG.clipsToBounds = true
-            cell.userIMG.layer.cornerRadius = 15
+            cell.userIMG.layer.cornerRadius = 37
             cell.userIMG.image = userfinalizedImage
 
         }
