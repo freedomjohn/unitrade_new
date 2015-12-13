@@ -30,11 +30,6 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
     
     var objectId = String()
     var userEmail = String()
-    
-    override func viewDidDisappear(animated: Bool) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
-        
-    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
