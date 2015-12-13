@@ -29,12 +29,12 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
     
     
     var objectId = String()
-//    var userID = String()
-
-    override func viewDidDisappear(animated: Bool) {
-//        navigationController?.popToRootViewControllerAnimated(true)
-    }
     
+    override func viewDidDisappear(animated: Bool) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+        
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,6 +49,7 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
         let query = PFQuery(className:"Post")
         query.getObjectInBackgroundWithId(objectId) {
             (post: PFObject?, error: NSError?) -> Void in
+            var userID = String()
             if error == nil && post != nil {
                 self.itemName.text = post?.objectForKey("name") as? String
                 // Bold the item name
@@ -60,7 +61,6 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
                 self.price.text = "$\(priceString)"
                 self.price.textColor = UIColor.orangeColor()
                 self.price.font = UIFont(name: "HelveticaNeue", size: CGFloat(20))
-                
                 self.itemDescription.text = post?.objectForKey("description") as? String
                 let newImage = post?.objectForKey("image") as! PFFile
                 newImage.getDataInBackgroundWithBlock({
