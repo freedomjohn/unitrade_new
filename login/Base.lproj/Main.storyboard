@@ -365,7 +365,7 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="tap to change photo">
-                                    <color key="titleColor" red="0.95618292299999996" green="0.57136200319999997" blue="0.18281672360000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.96078431369999995" green="0.29803921570000003" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="69" y="70" width="263" height="257"/>
@@ -414,7 +414,7 @@
                                 <rect key="frame" x="546" y="7" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.96078431369999995" green="0.29803921570000003" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.99714875709999995" green="0.95172953049999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="SaveChange:" destination="YFV-BM-jK1" eventType="touchUpInside" id="rP1-nC-tXo"/>
