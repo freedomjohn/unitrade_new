@@ -37,7 +37,7 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
 
         // Undeitable
         itemDescription.layer.borderWidth = 0.75
-        itemDescription.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
+        itemDescription.layer.borderColor = UIColor(red: 1.0, green: 0.39, blue: 0.11, alpha: 0.2).CGColor
         itemDescription.layer.cornerRadius = 5
         itemDescription.editable = false
         contactbtn.layer.cornerRadius = 5
