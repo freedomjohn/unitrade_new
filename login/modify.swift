@@ -11,6 +11,9 @@ import Parse
 
 class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerControllerDelegate{
    
+    let imagecrop = ImageUtil()
+    
+    @IBOutlet weak var deleteP: UIButton!
     @IBOutlet weak var itemName: UITextField!
     @IBOutlet weak var itemPrice: UITextField!
     
@@ -63,7 +66,7 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
         }
 
         
-        
+        deleteP.layer.cornerRadius = 5
         //itemName
         itemName.font = UIFont.boldSystemFontOfSize(17.0) // bold item name
         itemName.textColor = UIColor.whiteColor()
@@ -134,8 +137,8 @@ class modify: UIViewController, UINavigationControllerDelegate,UIImagePickerCont
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let temp : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-        myImgView.image = temp
+        let croppedImage: UIImage = imagecrop.cropToSquare(image: temp )
+        myImgView.image = croppedImage
         self.dismissViewControllerAnimated( true , completion: {})
     }
     
