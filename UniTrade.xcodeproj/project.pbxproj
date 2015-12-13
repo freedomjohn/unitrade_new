@@ -576,7 +576,7 @@
 				);
 				INFOPLIST_FILE = login/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jianghao.UniTrade;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiangh4ao.UniTrade;
 				PRODUCT_NAME = UniTrade;
 				PROVISIONING_PROFILE = "";
 			};
@@ -595,7 +595,7 @@
 				);
 				INFOPLIST_FILE = login/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jianghao.UniTrade;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiangh4ao.UniTrade;
 				PRODUCT_NAME = UniTrade;
 				PROVISIONING_PROFILE = "";
 			};
