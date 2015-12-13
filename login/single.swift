@@ -62,7 +62,7 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
                     print("error")
                 }
 
-                self.itemName.text = post?.objectForKey("name") as? String
+                self.itemName.text = post?.objectForKey("name")?.capitalizedString
                 // Bold the item name
                 self.itemName.font = UIFont.boldSystemFontOfSize(17.0)
                 //                self.category.text = post?.objectForKey("category") as? String
