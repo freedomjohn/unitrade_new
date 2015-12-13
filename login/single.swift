@@ -29,6 +29,7 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
     
     
     var objectId = String()
+    var userEmail = String()
     
     override func viewDidDisappear(animated: Bool) {
         self.navigationController?.popToRootViewControllerAnimated(true)
@@ -52,11 +53,12 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
             var userID = String()
             if error == nil && post != nil {
                 userID = (post?.objectForKey("user") as? String)!
-                print(userID)
+                //print(userID)
                 do{
                     let postUser :PFUser = try PFQuery.getUserObjectWithId(userID)
                     print(postUser)
                     self.sellerName.text = postUser.objectForKey("username") as? String
+                    self.userEmail = postUser.objectForKey("email") as! String
                 }catch{
                     print("error")
                 }
@@ -128,8 +130,8 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
-        
-        mailComposerVC.setToRecipients(["dbmin@hotmail.com"])
+        //print(userEmail)
+        mailComposerVC.setToRecipients([userEmail])
         mailComposerVC.setSubject("Interest about \(itemName.text!)")
         mailComposerVC.setMessageBody("", isHTML: false)
         
