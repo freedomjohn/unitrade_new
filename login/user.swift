@@ -29,6 +29,17 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        do{
+            let user :PFUser = try PFUser.currentUser()!
+            let imageToLoad = user.objectForKey("portrait") as? PFFile
+            let imageData = try imageToLoad!.getData()
+            let finalizedImage = UIImage(data: imageData)
+            userface.image = finalizedImage
+        }catch{
+            
+            print("error")
+        }
+        
         userID.text = PFUser.currentUser()?.username
         loadData()
         var numPost = 0
@@ -45,7 +56,7 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         userface.clipsToBounds = true
-        userface.layer.cornerRadius = 80
+        userface.layer.cornerRadius = 90
         
         do {
             let query = PFQuery(className: "Post")
