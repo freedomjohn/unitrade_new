@@ -38,8 +38,6 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         super.viewWillAppear(animated)
 
         loadData()
-        print(filterCate)
-        print(filterPrice)
     }
     
     
