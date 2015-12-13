@@ -281,7 +281,6 @@
                                 <rect key="frame" x="0.0" y="274" width="600" height="277"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="g6V-AQ-4nO"/>
                                     <constraint firstAttribute="height" constant="421" id="g7J-NH-mFl"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="0.0" id="1zd-2k-Tlo">
@@ -318,18 +317,13 @@
                                 </cells>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="g6V-AQ-4nO"/>
                                         <exclude reference="g7J-NH-mFl"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="g6V-AQ-4nO"/>
                                         <include reference="g7J-NH-mFl"/>
                                     </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="515" width="400" height="236"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="Hmb-FO-ScU" id="gUt-GH-6AA"/>
@@ -379,7 +373,9 @@
                             <constraint firstAttribute="trailing" secondItem="J7V-h4-d1X" secondAttribute="trailing" id="Axq-ab-APZ"/>
                             <constraint firstItem="VU9-A2-2fE" firstAttribute="top" secondItem="9e7-sl-aV9" secondAttribute="bottom" constant="9" id="EVR-ad-kbo"/>
                             <constraint firstItem="k3R-lu-esh" firstAttribute="top" secondItem="idE-qZ-y7L" secondAttribute="bottom" constant="22" id="HyF-7Y-uv1"/>
+                            <constraint firstAttribute="trailing" secondItem="J7V-h4-d1X" secondAttribute="trailing" id="J3H-xy-Pyh"/>
                             <constraint firstItem="GaO-ZP-rji" firstAttribute="leading" secondItem="oKS-iw-w0O" secondAttribute="trailing" constant="8" id="Jvd-SK-MaV"/>
+                            <constraint firstItem="J7V-h4-d1X" firstAttribute="leading" secondItem="U1H-Kq-1eP" secondAttribute="leading" id="LXC-Zn-1YG"/>
                             <constraint firstItem="k3R-lu-esh" firstAttribute="baseline" secondItem="Pbh-Xq-54O" secondAttribute="baseline" id="Nd2-ev-yPA"/>
                             <constraint firstItem="VU9-A2-2fE" firstAttribute="top" secondItem="9e7-sl-aV9" secondAttribute="bottom" constant="12" id="Nhi-WA-a0N"/>
                             <constraint firstItem="idE-qZ-y7L" firstAttribute="top" secondItem="9e7-sl-aV9" secondAttribute="bottom" constant="23" id="PDW-po-30D"/>
@@ -907,7 +903,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="154-tC-KCL" id="nD6-Y4-m1o">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
