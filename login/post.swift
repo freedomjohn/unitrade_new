@@ -30,7 +30,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectCategory.text = category[row]
-        selectCategory.textColor = UIColor.whiteColor()
+        selectCategory.textColor = UIColor.lightGrayColor()
         picker.hidden = true
     }
 
@@ -71,7 +71,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     func textViewDidBeginEditing(textView: UITextView) {
         if textView.textColor == UIColor.lightGrayColor() {
             textView.text = nil
-            textView.textColor = UIColor.whiteColor()
+            textView.textColor = UIColor.darkGrayColor()
         }
     }
     
@@ -92,31 +92,29 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         // itemDescription placeholder
         itemDescription.text = "Write a short description"
         itemDescription.textColor = UIColor.lightGrayColor()
-        itemDescription.backgroundColor = UIColor.grayColor()
+//        itemDescription.backgroundColor = UIColor.grayColor()
         itemDescription.delegate? = self
         
         
         //pictureBtn styling
         pictureBtn.layer.cornerRadius = 5
+        pictureBtn.layer.borderWidth = 0.75
+        pictureBtn.layer.borderColor = UIColor(red: 1.0, green: 0.39, blue: 0.11, alpha: 0.2).CGColor
         print(pictureBtn.backgroundColor)
         
         //itemName
-//        itemName.backgroundColor = UIColor.grayColor()
-//        itemName.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
         itemName.layer.borderColor = UIColor(red: 1.0, green: 0.39, blue: 0.11, alpha: 0.2).CGColor
-
         itemName.layer.borderWidth = 0.75
         itemName.layer.cornerRadius = 5
         
         //Price styling
-        Price.backgroundColor = UIColor.grayColor()
-        Price.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
+        Price.layer.borderColor = UIColor(red: 1.0, green: 0.39, blue: 0.11, alpha: 0.2).CGColor
         Price.layer.borderWidth = 0.75
         Price.layer.cornerRadius = 5
         
         //itemDescription styling
         itemDescription.layer.borderWidth = 0.75
-        itemDescription.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
+        itemDescription.layer.borderColor = UIColor(red: 1.0, green: 0.39, blue: 0.11, alpha: 0.2).CGColor
         itemDescription.layer.cornerRadius = 5
         
         //for picker
@@ -133,8 +131,10 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         currentImage.layer.cornerRadius = 15
         
         selectCategory.clipsToBounds = true
-        selectCategory.backgroundColor = UIColor.grayColor()
-        selectCategory.textColor = UIColor.whiteColor()
+//        selectCategory.backgroundColor = UIColor.grayColor()
+        selectCategory.textColor = UIColor.lightGrayColor()
+        selectCategory.layer.borderColor = UIColor(red: 1.0, green: 0.39, blue: 0.11, alpha: 0.2).CGColor
+        selectCategory.layer.borderWidth = 0.75
         selectCategory.layer.cornerRadius = 5
     }
     
