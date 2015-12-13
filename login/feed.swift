@@ -40,11 +40,21 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         let userface = UIImageView(image: UIImage(named: "androidlogo.jpg"))
         let imageData = UIImageJPEGRepresentation(userface.image!, 0.01)
         let imageFile = PFFile(name:"image.jpeg", data:imageData!)
-*/
-        //var currentuser = PFUser.currentUser()
-        //currentuser!["portrait"] = imageFile
-        //print(currentuser!.objectId)
 
+        var currentuser = PFUser.currentUser()
+        //currentuser!["portrait"] = imageFile
+        var userID = currentuser!.objectId
+        //print(userID)
+        do{
+            let postUser :PFUser = try PFQuery.getUserObjectWithId(userID)
+            print(postUser)
+            //self.sellerName.text = postUser.objectForKey("username") as? String
+            //self.userEmail = postUser.objectForKey("email") as! String
+        }catch{
+            
+            print("error")
+        }
+*/
         loadData()
     }
     
@@ -246,14 +256,13 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         return true
     }
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
-        /*
-            let userface = UIImageView(image: UIImage(named: "androidlogo.jpg"))
+        
+            let userface = UIImageView(image: UIImage(named: "user111.png"))
             let imageData = UIImageJPEGRepresentation(userface.image!, 0.01)
             let imageFile = PFFile(name:"image.jpeg", data:imageData!)
             var currentuser = PFUser.currentUser()
             currentuser!["portrait"] = imageFile
-*/
-              //  .addObject(imageFile!, forKey: "portrait")
+            currentuser!.saveInBackground()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
