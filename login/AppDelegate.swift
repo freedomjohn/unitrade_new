@@ -28,11 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         // Color of the tab bar and button
-        UITabBar.appearance().barTintColor = UIColor.blackColor()
+        UITabBar.appearance().barTintColor = UIColor(red:1.00, green:0.39, blue:0.41, alpha:1.0)
         UITabBar.appearance().tintColor = UIColor.whiteColor()
         
         // Chaning the color or navigation bar
-        UINavigationBar.appearance().barTintColor = UIColor.blackColor()
+        UINavigationBar.appearance().barTintColor = UIColor(red:1.00, green:0.39, blue:0.41, alpha:1.0)
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         // Set Navigation bar background image
