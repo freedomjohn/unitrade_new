@@ -660,6 +660,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gcb-ro-hbM">
                                 <rect key="frame" x="204" y="386" width="57" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="contact!">
                                     <color key="titleColor" red="0.9561829229797979" green="0.57136200318377639" blue="0.18281672356378489" alpha="1" colorSpace="calibratedRGB"/>
@@ -671,15 +672,6 @@
                                     <action selector="contactBtn:" destination="3wx-lh-fyp" eventType="touchUpInside" id="cCe-GK-WeL"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8UH-Pb-Eso">
-                                <rect key="frame" x="20" y="423" width="560" height="128"/>
-                                <color key="backgroundColor" red="0.74901960779999999" green="0.92156862750000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="35" y="428" width="281" height="128"/>
-                                </variation>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYn-Po-WHD">
                                 <rect key="frame" x="106" y="348" width="242" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -689,10 +681,20 @@
                                     <rect key="frame" x="137" y="357" width="155" height="41"/>
                                 </variation>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8UH-Pb-Eso">
+                                <rect key="frame" x="20" y="423" width="560" height="128"/>
+                                <color key="backgroundColor" red="0.74901960779999999" green="0.92156862750000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="43" y="428" width="281" height="128"/>
+                                </variation>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.74901960779999999" green="0.92156862750000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="contactbtn" destination="Gcb-ro-hbM" id="Nlb-Wh-iuk"/>
                         <outlet property="currentImage" destination="OCW-hx-z5j" id="xxM-FD-GeO"/>
                         <outlet property="itemDescription" destination="8UH-Pb-Eso" id="Cyo-Ud-VIF"/>
                         <outlet property="itemName" destination="fYn-Po-WHD" id="Cap-og-l89"/>

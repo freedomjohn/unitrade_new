@@ -14,6 +14,7 @@ import MessageUI
 
 class single: UIViewController, MFMailComposeViewControllerDelegate{
     
+    @IBOutlet weak var contactbtn: UIButton!
     
     @IBOutlet weak var currentImage: UIImageView!
     
@@ -39,8 +40,11 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
         super.viewDidLoad()
 
         // Undeitable
+        itemDescription.layer.borderWidth = 0.75
+        itemDescription.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
+        itemDescription.layer.cornerRadius = 5
         itemDescription.editable = false
-        
+        contactbtn.layer.cornerRadius = 5
         // Show the navigation bar and lock it
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.hidesBarsOnSwipe = false
@@ -94,6 +98,7 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
         } else {
             self.showSendMailErrorAlert()
         }
+        
     }
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
