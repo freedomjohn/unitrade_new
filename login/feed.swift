@@ -201,6 +201,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         ]
         let logInlogoTitle = UILabel()
         logInlogoTitle.text = "UniTrade"
+        logInlogoTitle.font = UIFont(name: (logInlogoTitle.font?.fontName)!, size: 45)
         self.logInController.logInView?.logo = logInlogoTitle
         self.logInController.delegate = self
         let logoView = UIImageView(image: UIImage(named: "IMG_4107.jpg"))
@@ -210,6 +211,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         
         let signUplogoTitle = UILabel()
         signUplogoTitle.text = "UniTrade"
+        signUplogoTitle.font = UIFont(name: (signUplogoTitle.font?.fontName)!, size: 45)
         self.signUpViewController.signUpView?.logo = signUplogoTitle
         self.signUpViewController.delegate = self
         self.signUpViewController.signUpView?.addSubview(logoView2)
