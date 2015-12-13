@@ -45,8 +45,6 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         }
 */
         loadData()
-        print(filterCate)
-        print(filterPrice)
     }
     
     

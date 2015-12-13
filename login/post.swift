@@ -69,9 +69,10 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
     
     // for description
     func textViewDidBeginEditing(textView: UITextView) {
+        if textView.textColor == UIColor.lightGrayColor() {
             textView.text = nil
             textView.textColor = UIColor.whiteColor()
-        
+        }
     }
     
     func textViewDidEndEditing(textView: UITextView) {
@@ -80,11 +81,10 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
             textView.textColor = UIColor.lightGrayColor()
         }
     }
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         imagePicker.delegate = self
         // Edit item name first
 //        itemName.becomeFirstResponder()
@@ -245,7 +245,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
                 }
                 
             }
-            currentImage.image = nil
+            currentImage.image = UIImage(named: "no_image-512")
             self.checkPhoto = false
         }
         self.view.endEditing(true)
