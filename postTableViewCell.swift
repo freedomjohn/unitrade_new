@@ -12,6 +12,7 @@ import Bolts
 
 class postTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var userIMG: UIImageView!
     @IBOutlet weak var imagedis: PFImageView!
     @IBOutlet weak var titlename: UILabel!
     @IBOutlet weak var des: UILabel!

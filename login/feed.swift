@@ -26,7 +26,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     var images = [PFFile]()
     var imageCaptions = [String]()
     var imagePrice = [String]()
-
+    var userimages = [PFFile]()
     // To show search bar on navigation bar
 //    lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(30, 0, 250, 20))
 
@@ -80,6 +80,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         self.images = [PFFile]()
         self.imageCaptions = [String]()
         self.imagePrice = [String]()
+        self.userimages = [PFFile]()
         
         if(filterPrice == "$0 - $10"){
             low = 0
@@ -116,7 +117,9 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
                 self.images.append(post["image"] as! PFFile)
                 self.imageCaptions.append(post["name"] as! String)
                 self.imagePrice.append(String(post["price"]))
-                
+                let userID = post["user"] as! String
+                let postUser: PFUser = try PFQuery.getUserObjectWithId(userID)
+                self.userimages.append(postUser.objectForKey("portrait") as! PFFile)
             }
         }
         catch {
@@ -162,9 +165,12 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         let imageToLoad = self.images[indexPath.row] as PFFile
         let imageCaption = self.imageCaptions[indexPath.row] as String
         let imagePrice = self.imagePrice[indexPath.row] as String
+        let userImageToLoad = self.userimages[indexPath.row] as PFFile
         do {
         let imageData = try imageToLoad.getData()
+        let userImageData = try userImageToLoad.getData()
         let finalizedImage = UIImage(data: imageData)
+        let userfinalizedImage = UIImage(data: userImageData)
         
         
             cell.titlename.text = imageCaption.capitalizedString
@@ -179,7 +185,9 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
             }
             cell.des.textColor = UIColor(red:1.00, green:0.39, blue:0.41, alpha:1.0)
             cell.imagedis.image = finalizedImage
-            
+            cell.userIMG.clipsToBounds = true
+            cell.userIMG.layer.cornerRadius = 15
+            cell.userIMG.image = userfinalizedImage
 
         }
         catch {
