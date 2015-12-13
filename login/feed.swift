@@ -40,11 +40,21 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         let userface = UIImageView(image: UIImage(named: "androidlogo.jpg"))
         let imageData = UIImageJPEGRepresentation(userface.image!, 0.01)
         let imageFile = PFFile(name:"image.jpeg", data:imageData!)
-*/
-        //var currentuser = PFUser.currentUser()
-        //currentuser!["portrait"] = imageFile
-        //print(currentuser!.objectId)
 
+        var currentuser = PFUser.currentUser()
+        //currentuser!["portrait"] = imageFile
+        var userID = currentuser!.objectId
+        //print(userID)
+        do{
+            let postUser :PFUser = try PFQuery.getUserObjectWithId(userID)
+            print(postUser)
+            //self.sellerName.text = postUser.objectForKey("username") as? String
+            //self.userEmail = postUser.objectForKey("email") as! String
+        }catch{
+            
+            print("error")
+        }
+*/
         loadData()
     }
     
@@ -167,7 +177,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
             else{
              cell.des.text = "$\(imagePrice)"
             }
-            cell.des.textColor = UIColor.orangeColor()
+            cell.des.textColor = UIColor(red:1.00, green:0.39, blue:0.41, alpha:1.0)
             cell.imagedis.image = finalizedImage
             
 
@@ -191,6 +201,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         ]
         let logInlogoTitle = UILabel()
         logInlogoTitle.text = "UniTrade"
+        logInlogoTitle.font = UIFont(name: (logInlogoTitle.font?.fontName)!, size: 45)
         self.logInController.logInView?.logo = logInlogoTitle
         self.logInController.delegate = self
         let logoView = UIImageView(image: UIImage(named: "IMG_4107.jpg"))
@@ -200,6 +211,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         
         let signUplogoTitle = UILabel()
         signUplogoTitle.text = "UniTrade"
+        signUplogoTitle.font = UIFont(name: (signUplogoTitle.font?.fontName)!, size: 45)
         self.signUpViewController.signUpView?.logo = signUplogoTitle
         self.signUpViewController.delegate = self
         self.signUpViewController.signUpView?.addSubview(logoView2)
@@ -244,14 +256,13 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
         return true
     }
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
-        /*
-            let userface = UIImageView(image: UIImage(named: "androidlogo.jpg"))
+        
+            let userface = UIImageView(image: UIImage(named: "user111.png"))
             let imageData = UIImageJPEGRepresentation(userface.image!, 0.01)
             let imageFile = PFFile(name:"image.jpeg", data:imageData!)
             var currentuser = PFUser.currentUser()
             currentuser!["portrait"] = imageFile
-*/
-              //  .addObject(imageFile!, forKey: "portrait")
+            currentuser!.saveInBackground()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
