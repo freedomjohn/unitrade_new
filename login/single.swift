@@ -59,6 +59,7 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
                     self.sellerName.text = postUser.objectForKey("username") as? String
                     self.userEmail = postUser.objectForKey("email") as! String
                 }catch{
+                    
                     print("error")
                 }
 
