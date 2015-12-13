@@ -157,8 +157,12 @@ class user: UIViewController, UICollectionViewDataSource, UICollectionViewDelega
         let temp : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let croppedImage: UIImage = imagecrop.cropToSquare(image: temp )
         userface.image = croppedImage
+        let imageData = UIImageJPEGRepresentation(croppedImage, 0.01)
+        let imageFile = PFFile(name:"image.jpeg", data:imageData!)
+        var currentuser = PFUser.currentUser()
+        currentuser!["portrait"] = imageFile
         userface.clipsToBounds = true
-        userface.layer.cornerRadius = 100
+        userface.layer.cornerRadius = 90
         self.dismissViewControllerAnimated( true , completion: {})
         
     }

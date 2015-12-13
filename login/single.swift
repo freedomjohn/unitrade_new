@@ -90,30 +90,11 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
             } else {
                 print(error)
             }
-            
-//            // customize text
-//            //itemName
-//            self.itemName.font = UIFont.boldSystemFontOfSize(17.0) // bold item name
-//            self.itemName.textColor = UIColor.whiteColor()
-//            self.itemName.backgroundColor = UIColor.grayColor()
-//            self.itemName.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
-//            self.itemName.layer.borderWidth = 0.75
-//            self.itemName.layer.cornerRadius = 5
-//            //Price styling
-//            self.price.textColor = UIColor.whiteColor()
-//            self.price.backgroundColor = UIColor.grayColor()
-//            self.price.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
-//            self.price.layer.borderWidth = 0.75
-//            self.price.layer.cornerRadius = 5
-//            
-//            // Description
-//            self.itemDescription.textColor = UIColor.whiteColor()
-//            self.itemDescription.backgroundColor = UIColor.grayColor()
-//            self.itemDescription.layer.borderWidth = 0.75
-//            self.itemDescription.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
-//            self.itemDescription.layer.cornerRadius = 5
         }
-        
+        // Swipe function
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
     }
     
     
@@ -125,7 +106,6 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
         } else {
             self.showSendMailErrorAlert()
         }
-//        navigationController?.popViewControllerAnimated(true)//
     }
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
@@ -146,17 +126,22 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
     // MARK: MFMailComposeViewControllerDelegate
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-//        switch result {
-//        case MFMailComposeResultCancelled:
-//            print("cancelled mail")
-//        case MFMailComposeResultSent:
-//            print("mail sent")
-//        default:
-//            break
-//        }
+
         controller.dismissViewControllerAnimated(true, completion: nil)
         
         
+    }
+    // swipe to pop
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Right:
+                navigationController?.popViewControllerAnimated(true)
+            default:
+                break
+            }
+        }
     }
 
 }

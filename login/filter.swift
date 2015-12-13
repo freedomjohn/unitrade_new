@@ -21,7 +21,15 @@ class ViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Show the navigation bar and lock it
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.hidesBarsOnSwipe = false
+        
         // Do any additional setup after loading the view, typically from a nib.
+        // Swipe function
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
     }
     
     override func didReceiveMemoryWarning() {
@@ -106,6 +114,20 @@ class ViewController: UITableViewController{
         
         DestViewController.filterPrice = chosenPrice
         DestViewController.filterCate = chosenCate
+    }
+    
+    
+    // swipe to pop
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Right:
+                navigationController?.popViewControllerAnimated(true)
+            default:
+                break
+            }
+        }
     }
     
 }
