@@ -89,7 +89,7 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         // Edit item name first
 //        itemName.becomeFirstResponder()
         
-        // itemDescription place holder
+        // itemDescription placeholder
         itemDescription.text = "Write a short description"
         itemDescription.textColor = UIColor.lightGrayColor()
         itemDescription.backgroundColor = UIColor.grayColor()
@@ -99,11 +99,15 @@ class post: UIViewController ,UINavigationControllerDelegate, UIImagePickerContr
         //pictureBtn styling
         pictureBtn.layer.cornerRadius = 5
         print(pictureBtn.backgroundColor)
+        
         //itemName
-        itemName.backgroundColor = UIColor.grayColor()
-        itemName.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
+//        itemName.backgroundColor = UIColor.grayColor()
+//        itemName.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
+        itemName.layer.borderColor = UIColor(red: 1.0, green: 0.39, blue: 0.11, alpha: 0.2).CGColor
+
         itemName.layer.borderWidth = 0.75
         itemName.layer.cornerRadius = 5
+        
         //Price styling
         Price.backgroundColor = UIColor.grayColor()
         Price.layer.borderColor = UIColor(red: 0.4, green: 0.8, blue: 1, alpha: 0.693607).CGColor
