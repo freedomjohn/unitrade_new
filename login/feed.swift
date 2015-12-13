@@ -177,7 +177,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
             else{
              cell.des.text = "$\(imagePrice)"
             }
-            cell.des.textColor = UIColor.orangeColor()
+            cell.des.textColor = UIColor(red:1.00, green:0.39, blue:0.41, alpha:1.0)
             cell.imagedis.image = finalizedImage
             
 

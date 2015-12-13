@@ -63,7 +63,7 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
                     print("error")
                 }
 
-                self.itemName.text = post?.objectForKey("name") as? String
+                self.itemName.text = post?.objectForKey("name")?.capitalizedString
                 // Bold the item name
                 self.itemName.font = UIFont.boldSystemFontOfSize(17.0)
                 //                self.category.text = post?.objectForKey("category") as? String
@@ -71,7 +71,7 @@ class single: UIViewController, MFMailComposeViewControllerDelegate{
                 let itemprice = post?.objectForKey("price") as! Int
                 let priceString = String(itemprice)
                 self.price.text = "$\(priceString)"
-                self.price.textColor = UIColor.orangeColor()
+                self.price.textColor = UIColor(red:1.00, green:0.39, blue:0.41, alpha:1.0)
                 self.price.font = UIFont(name: "HelveticaNeue", size: CGFloat(20))
                 self.itemDescription.text = post?.objectForKey("description") as? String
                 let newImage = post?.objectForKey("image") as! PFFile
