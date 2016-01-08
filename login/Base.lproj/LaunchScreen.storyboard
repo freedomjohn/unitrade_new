@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,11 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trade1" translatesAutoresizingMaskIntoConstraints="NO" id="yxP-nN-2Wk">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <rect key="frame" x="180" y="101" width="240" height="232"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="UniTrade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4m-uf-vr6">
-                                <rect key="frame" x="103" y="206" width="394" height="188"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="84"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="UniTrade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4m-uf-vr6">
+                                <rect key="frame" x="128" y="457" width="344" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="F4m-uf-vr6" secondAttribute="height" multiplier="43:12" id="Eb0-Je-RHF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5274229307432432" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
@@ -32,7 +36,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="F4m-uf-vr6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1Xt-dv-9UL"/>
                             <constraint firstItem="yxP-nN-2Wk" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="65x-p0-fZ0"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="F4m-uf-vr6" secondAttribute="bottom" constant="47" id="Agt-Aw-ZMg"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="yxP-nN-2Wk" secondAttribute="bottom" constant="156" id="FIc-hU-3X7"/>
                             <constraint firstItem="yxP-nN-2Wk" firstAttribute="trailing" secondItem="F4m-uf-vr6" secondAttribute="trailing" id="H3Y-3q-hlf"/>
                             <constraint firstItem="yxP-nN-2Wk" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="84" id="RjS-L6-RbU"/>
@@ -45,13 +51,13 @@
                                 <exclude reference="yxP-nN-2Wk"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="FIc-hU-3X7"/>
-                                <exclude reference="z8F-T3-g0z"/>
                                 <exclude reference="65x-p0-fZ0"/>
                                 <exclude reference="H3Y-3q-hlf"/>
                                 <exclude reference="RjS-L6-RbU"/>
                                 <exclude reference="iBE-Wa-M7y"/>
                                 <exclude reference="yuK-8G-erm"/>
+                                <exclude reference="FIc-hU-3X7"/>
+                                <exclude reference="z8F-T3-g0z"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -59,20 +65,20 @@
                                 <include reference="yxP-nN-2Wk"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="FIc-hU-3X7"/>
-                                <include reference="z8F-T3-g0z"/>
                                 <include reference="65x-p0-fZ0"/>
                                 <include reference="H3Y-3q-hlf"/>
                                 <include reference="RjS-L6-RbU"/>
                                 <include reference="iBE-Wa-M7y"/>
                                 <include reference="yuK-8G-erm"/>
+                                <include reference="FIc-hU-3X7"/>
+                                <include reference="z8F-T3-g0z"/>
                             </mask>
                         </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.5" y="375"/>
+            <point key="canvasLocation" x="52" y="375"/>
         </scene>
     </scenes>
     <resources>

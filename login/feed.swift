@@ -27,6 +27,7 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
     var imageCaptions = [String]()
     var imagePrice = [String]()
     var userimages = [PFFile]()
+    var check = 0
     // To show search bar on navigation bar
 //    lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(30, 0, 250, 20))
 
@@ -55,7 +56,10 @@ class feed: UITableViewController,PFLogInViewControllerDelegate, PFSignUpViewCon
             print("error")
         }
 */
-        loadData()
+        if (check == 0) {
+            loadData()
+            check = 1
+        }
     }
     
     
