@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DD028881C45BDE6000E824E /* firstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD028871C45BDE6000E824E /* firstViewController.swift */; };
 		3201B05D1C1CCDEE00318034 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3201B05C1C1CCDEE00318034 /* MessageUI.framework */; };
 		3231DDA71BF58F920090FC80 /* post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3231DDA61BF58F920090FC80 /* post.swift */; };
 		324C35BB1BF5A82900AC7BB8 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324C35BA1BF5A82900AC7BB8 /* user.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DD028871C45BDE6000E824E /* firstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = firstViewController.swift; path = login/firstViewController.swift; sourceTree = SOURCE_ROOT; };
 		3201B05C1C1CCDEE00318034 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3231DDA61BF58F920090FC80 /* post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = post.swift; sourceTree = "<group>"; };
 		324C35BA1BF5A82900AC7BB8 /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				3A9C1F3E1BF5497F00666FFB /* AppDelegate.swift */,
 				3A9C1F421BF5497F00666FFB /* Main.storyboard */,
+				1DD028871C45BDE6000E824E /* firstViewController.swift */,
 				3261A7041C16F0EE00F547F2 /* Assets.xcassets */,
 				58BE112A1C13EC46003D1018 /* postTableViewCell.swift */,
 				32A3967E1C045EF0003B3D95 /* feed.swift */,
@@ -417,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				324C35BB1BF5A82900AC7BB8 /* user.swift in Sources */,
+				1DD028881C45BDE6000E824E /* firstViewController.swift in Sources */,
 				32A3967F1C045EF0003B3D95 /* feed.swift in Sources */,
 				3231DDA71BF58F920090FC80 /* post.swift in Sources */,
 				3A2796461C14E95E004B1C5B /* single.swift in Sources */,
