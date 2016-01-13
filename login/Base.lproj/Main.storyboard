@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WsR-jS-hWN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v6r-gg-3NE">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -9,13 +9,18 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--category-->
         <scene sceneID="Rnl-ax-bNi">
             <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" id="WsR-jS-hWN" customClass="firstViewController" customModule="UniTrade" customModuleProvider="target" sceneMemberID="viewController"/>
+                <viewController autoresizesArchivedViewToFullSize="NO" id="WsR-jS-hWN" customClass="firstViewController" customModule="UniTrade" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="category" id="0AG-4N-EAW"/>
+                    <connections>
+                        <segue destination="Prs-JL-fFe" kind="show" identifier="moveToMain" id="81L-WZ-DaE"/>
+                    </connections>
+                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXL-dR-YLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2430" y="-664"/>
+            <point key="canvasLocation" x="-1512" y="-664"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="kLe-qv-zyB">
@@ -34,7 +39,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CfY-Yt-cW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1572" y="-674"/>
+            <point key="canvasLocation" x="-654" y="-674"/>
         </scene>
         <!--Create a post-->
         <scene sceneID="wZH-f3-8hT">
@@ -391,7 +396,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ac9-oe-YbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58.5" y="-674"/>
+            <point key="canvasLocation" x="859.5" y="-674"/>
         </scene>
         <!--User-->
         <scene sceneID="nFM-Aq-qHJ">
@@ -419,7 +424,8 @@
                                         <exclude reference="xdE-63-jUy"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="32" width="130" height="130"/>
                                     <mask key="constraints">
                                         <include reference="XhO-I1-HM8"/>
                                         <exclude reference="ZSO-9c-4Oy"/>
@@ -443,7 +449,8 @@
                                         <exclude reference="byK-od-tnx"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="158" y="40" width="69" height="21"/>
                                     <mask key="constraints">
                                         <include reference="6SD-Ti-cAh"/>
                                         <include reference="byK-od-tnx"/>
@@ -488,7 +495,8 @@
                                         <exclude reference="knM-Wc-OaI"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="158" y="83" width="69" height="27"/>
                                     <mask key="constraints">
                                         <include reference="Ati-4P-2wB"/>
                                         <include reference="knM-Wc-OaI"/>
@@ -510,7 +518,8 @@
                                         <exclude reference="rGW-xe-8lJ"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="235" y="83" width="71" height="27"/>
                                     <mask key="constraints">
                                         <include reference="cTu-K6-EOU"/>
                                         <include reference="rGW-xe-8lJ"/>
@@ -583,7 +592,8 @@
                                         <exclude reference="EnQ-2E-gfO"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="32" width="130" height="130"/>
                                     <mask key="constraints">
                                         <include reference="2uI-cn-kk5"/>
                                         <include reference="EnQ-2E-gfO"/>
@@ -703,7 +713,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="User" id="UO1-jn-ycE">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="7bh-Y2-egr">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="7bh-Y2-egr">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="LogoutBtn:" destination="Hmb-FO-ScU" id="KoV-Rj-h6t"/>
@@ -1320,7 +1330,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZ5-kA-Aj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-843" y="-649"/>
+            <point key="canvasLocation" x="75" y="-649"/>
         </scene>
         <!--User-->
         <scene sceneID="RKu-LX-HN0">
@@ -1341,6 +1351,24 @@
             </objects>
             <point key="canvasLocation" x="-856.5" y="125"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lin-WU-wMc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v6r-gg-3NE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MXv-bI-9t3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WsR-jS-hWN" kind="relationship" relationship="rootViewController" id="HZ9-ka-JVn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Iu-cL-RhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2430" y="-664"/>
+        </scene>
     </scenes>
     <resources>
         <image name="18-512 copy" width="40" height="40"/>
@@ -1350,6 +1378,6 @@
         <image name="user1 copy" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rke-sm-AeJ"/>
+        <segue reference="mm5-Fp-1m3"/>
     </inferredMetricsTieBreakers>
 </document>

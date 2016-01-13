@@ -12,9 +12,14 @@ class firstViewController: UIViewController {
 
     @IBOutlet var selfview: UIView!
     let screenSize: CGRect = UIScreen.mainScreen().bounds
-    
+    //let tabbarsize: CGRect = UIScreen.mainScreen().
    // @IBOutlet weak var first: UIButton!
-    
+   // func tabBarView
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         var second = UIButton()
@@ -27,9 +32,10 @@ class firstViewController: UIViewController {
         let screenHeight = screenSize.height
         first.frame = CGRectMake(0, 0, screenWidth / 2  , screenHeight / 3)
         first.setTitle("second hand", forState: UIControlState.Normal)
-        first.addTarget(self, action: "Action:", forControlEvents: UIControlEvents.TouchUpInside)
+        first.addTarget(self, action: "clickMe:", forControlEvents: UIControlEvents.TouchUpInside)
         second.frame = CGRectMake(screenWidth / 2, 0, screenWidth / 2 ,screenHeight / 3)
         second.setTitle("party", forState: UIControlState.Normal)
+        second.addTarget(self, action: "clickMe:", forControlEvents: UIControlEvents.TouchUpInside)
         third.frame = CGRectMake(0, screenHeight / 3 , screenWidth / 2 ,screenHeight / 3)
         third.setTitle("study group", forState: UIControlState.Normal)
         fourth.frame = CGRectMake(screenWidth / 2 ,screenHeight / 3 , screenWidth / 2 ,screenHeight / 3)
@@ -47,9 +53,16 @@ class firstViewController: UIViewController {
         self.view.addSubview(fourth)
         fifth.backgroundColor = UIColor(red: 73/255,green: 116/255,blue: 132/255, alpha: 1)
         self.view.addSubview(fifth)
-        sixth.backgroundColor = UIColor(red: 73/255,green: 128/255,blue: 132/255, alpha: 1)
+        sixth.backgroundColor = UIColor(red: 78/255,green: 130/255,blue: 135/255, alpha: 1)
         self.view.addSubview(sixth)
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func clickMe(sender: UIButton) {
+        self.navigationController?.navigationBarHidden = false
+        performSegueWithIdentifier("moveToMain", sender: sender)
+        print("Button Clicked")
     }
 
     override func didReceiveMemoryWarning() {

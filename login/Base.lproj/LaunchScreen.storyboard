@@ -34,7 +34,7 @@
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.27268998753009527" green="0.74230571809875778" blue="0.67506344335334412" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="F4m-uf-vr6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1Xt-dv-9UL"/>
                             <constraint firstItem="yxP-nN-2Wk" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="65x-p0-fZ0"/>
@@ -51,13 +51,13 @@
                                 <exclude reference="yxP-nN-2Wk"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="FIc-hU-3X7"/>
+                                <exclude reference="z8F-T3-g0z"/>
                                 <exclude reference="65x-p0-fZ0"/>
                                 <exclude reference="H3Y-3q-hlf"/>
                                 <exclude reference="RjS-L6-RbU"/>
                                 <exclude reference="iBE-Wa-M7y"/>
                                 <exclude reference="yuK-8G-erm"/>
-                                <exclude reference="FIc-hU-3X7"/>
-                                <exclude reference="z8F-T3-g0z"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -65,13 +65,13 @@
                                 <include reference="yxP-nN-2Wk"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="FIc-hU-3X7"/>
+                                <include reference="z8F-T3-g0z"/>
                                 <include reference="65x-p0-fZ0"/>
                                 <include reference="H3Y-3q-hlf"/>
                                 <include reference="RjS-L6-RbU"/>
                                 <include reference="iBE-Wa-M7y"/>
                                 <include reference="yuK-8G-erm"/>
-                                <include reference="FIc-hU-3X7"/>
-                                <include reference="z8F-T3-g0z"/>
                             </mask>
                         </variation>
                     </view>
